@@ -1,20 +1,17 @@
 <template>
   <div class="container">
     <div class="playstoreSection">
-      <img
-        src="https://www.shipchajang.com/static/media/card_mobile.c9bb3166cd477783c88f.png"
-        alt="주차장 이미지"
-        style=
-      />
-      <div class="content-section">
+      <img :src="require('@/assets/icons/Group 143726112.svg')" alt="주차장 이미지"  style="border:2px solid red"/>
+
+      <div class="content-section" style="border:2px solid blue" >
         <div class="text-section">
           <h1>지도에서 벗어나자!</h1>
           <h3>지도를 벗어나 카드로 만나는 가장 쉬운 주차장 찾기</h3>
           <h3>당신이 어디 있든, 쉽게 찾는 주차장</h3>
         </div>
         <div class="link-section">
-          <a href="https://www.shipchajang.com/"><img src="https://via.placeholder.com/100" alt="링크1" /></a>
-          <a href="#"><img src="https://via.placeholder.com/100" alt="링크2" /></a>
+          <a href="https://www.shipchajang.com/"> <img :src="require('@/assets/icons/Frame 2800 (1).svg')" style="border-radius : 12px"></a>
+          <a href="#"> <img :src="require('@/assets/icons/Frame 2799.svg') " style="border-radius : 12px"/></a>
         </div>
       </div>
     </div>
@@ -40,7 +37,7 @@ export default {
   position: relative;
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: stretch;
   justify-content: flex-start;
   padding: 5rem;
   overflow: hidden;
@@ -68,7 +65,12 @@ export default {
   animation: rotate 10s infinite linear;
   z-index: 0;
 }
-
+.playstoreSection img{
+  flex : 1;
+  max-width: 100%; /* 부모 요소를 초과하지 않도록 설정 */
+  height: auto; /* 이미지 비율 유지 */
+  object-fit: cover; /* 이미지가 영역을 꽉 채움 */
+}
 @keyframes rotate {
   from {
     transform: rotate(0deg);
@@ -80,8 +82,11 @@ export default {
 
 .content-section {
   display: flex;
+  flex: 1;
   flex-direction: column;
-  margin-left: 20px;
+  justify-content: center; /* 내용 수직 중앙 정렬 */
+  align-items: center; /* 내용 가로 중앙 정렬 */
+  margin-left: 0; /* 간격 제거 */
 }
 
 .text-section {

@@ -6,7 +6,7 @@
       </div>
       <div class="display-text">
         <h1>{{ currentContent.title }}</h1>
-        <p>{{ currentContent.text }}</p>
+        <h3>{{ currentContent.text }}</h3>
       </div>
     </div>
 
@@ -18,9 +18,6 @@
 </template>
 
 
-
-
-
 <script>
 export default {
   name: "ScrollTransition",
@@ -28,19 +25,30 @@ export default {
     return {
       contents: [
         {
-          title: "첫 번째 제목",
-          text: "첫 번째 텍스트입니다.",
+          title: "",
+          text: "지도에서 찾을 필요 없이 추천 주차장으로 바로 주차장 찾기",
         image: require("@/assets/icons/Frame 143726304.svg"),
         },
         {
-          title: "두 번째 제목",
-          text: "두 번째 텍스트입니다.",
-          image: "https://via.placeholder.com/300/00FF00/FFFFFF?text=Image+2",
+          title: "",
+          text: "내가 원하는 주차장에 내가 원하는 주차 자리까지 선택하고 ",
+          image: require("@/assets/icons/Frame 143726305.svg"),
+          
         },
         {
-          title: "세 번째 제목",
-          text: "세 번째 텍스트입니다.",
-          image: "https://via.placeholder.com/300/0000FF/FFFFFF?text=Image+3",
+          title: "",
+          text: "쉽차장 차단기가 예약 공간을 지켜 주고 있어요",
+          image: require("@/assets/icons/Frame 143726305 (1).svg"),
+        },
+                {
+          title: "",
+          text: "내가 주차하고 싶은 만큼 사용하고 종료하기 눌러 결제하기",
+          image: require("@/assets/icons/Frame 143726305 (2).svg"),
+        },
+                {
+          title: "",
+          text: "나라에서 허용한 길가 주차 정보 쉽차장에서 찾아보기",
+          image: require("@/assets/icons/Frame 143726305 (3).svg"),
         },
       ],
       currentContent: {}, // 현재 보여질 콘텐츠
@@ -122,10 +130,15 @@ export default {
   object-fit: cover; /* 이미지 비율을 유지하며 영역을 채움 */
 }
 .display-text {
+  display: flex; /* Flexbox 사용 */
+  flex-direction: column; /* 세로 방향 정렬 */
+  justify-content: center; /* 자식 요소를 부모 디브 맨 아래로 정렬 */
+  align-items: center; /* 가로 방향 정렬 (중앙 정렬) */
   opacity: 1;
   transition: opacity 1s ease-in-out;
   flex: 1;
   border: 2px solid blue;
+  text-align: center; /* 텍스트 가운데 정렬 */
 }
 
 .scroll-trigger {

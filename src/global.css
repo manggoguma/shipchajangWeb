@@ -7,6 +7,13 @@ body {
     padding: 0;
     background-color: #F2F3F7; 
     scroll-behavior: smooth;
+    /* 스크롤바 숨기기 */
+    scrollbar-width: none; 
+    -ms-overflow-style: none;
+}
+
+body::-webkit-scrollbar {
+    display: none; /* Webkit 기반 브라우저 */
 }
 
 :root {
