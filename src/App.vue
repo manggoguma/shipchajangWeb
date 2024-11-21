@@ -1,28 +1,24 @@
 <template>
   <div>
-    <playStores/>
-    <featuresPage/>
-    <footerPage/>
+    <NavBar />
+    <router-view /> <!-- 라우터 컴포넌트를 렌더링 -->
+    <footerPage />
   </div>
 </template>
 
 <script>
-import playStores from './pages/playstores.vue';
-import featuresPage from './pages/features.vue'
-import footerPage from './pages/footer.vue'
-
+import NavBar from './components/NavBar.vue';
+import footerPage from './pages/footer.vue';
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    playStores,
-    featuresPage,
-    footerPage
-  
+    NavBar,
+    footerPage,
   },
 };
 </script>
 
 <style>
-/* 스타일 추가 */
+@import "./global.css";
 </style>

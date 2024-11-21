@@ -94,11 +94,13 @@ export default {
 
 
 
-<style scoped>
+<style>
 .container {
+  padding: 0 20rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: 5px solid white;
   
 }
 
@@ -109,14 +111,15 @@ export default {
   flex-direction: row; 
   align-items: stretch; 
   gap: 2rem; 
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  height: 80%;
   border: 2px solid red; 
+  padding: 5rem;
   transition: opacity 1s ease-in-out;
 }
 
 .display-image {
- width: 50%; /* 부모 요소에 맞춰 적절한 너비 설정 */
+  width: 50%; /* 부모 요소에 맞춰 적절한 너비 설정 */
   height: 100%; /* 부모 요소의 높이를 가득 채움 */
   display: flex;
   justify-content: center;
