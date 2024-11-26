@@ -3,6 +3,7 @@ import HomePage from '@/pages/HomePage.vue'; // Home 페이지를 위한 별도 
 import TermsPage from '@/pages/TermsPage.vue';
 import RulePage from '@/pages/RulePage.vue';
 import PrivacyPage from '@/pages/PrivacyPage.vue';
+import contactPage from '@/pages/contactPage.vue';
 
 const routes = [
   {
@@ -10,6 +11,7 @@ const routes = [
     name: 'Home',
     component: HomePage,
   },
+  
   {
     path: '/terms',
     name: 'TermsPage',
@@ -24,6 +26,11 @@ const routes = [
     path: '/privacy',
     name: 'PrivacyPage',
     component: PrivacyPage,
+  },
+  {
+    path: '/contactPage',
+    name: 'contactPage',
+    component: contactPage,
   },
 ];
 

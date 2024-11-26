@@ -1,53 +1,59 @@
 <template>
-
   <div class="footer-wrapper">
+    <!-- 상단 콘텐츠 섹션 -->
+    <div class="content-section">
+      <div class="text-section">
+        <h1>주차는 쉽차장, 수익은 쑥쑥</h1>
+        <h1>지금 쉽차장에 문의하세요</h1>
+      </div>
+      <router-link to="/contactPage" class="router-link">
+        문의하기
+      </router-link>
+    </div>
+
+    <!-- 하단 푸터 섹션 -->
     <div class="footerPage">
+      <!-- 심볼 섹션 -->
       <div class="symbol-section">
-        <img :src="require('@/assets/icons/Group 143726318.svg')" class="symbol-image">
-        <p>추천받고, 예약하고, 주차하고</p>
+        <img src="../assets/icons/finalbluelogo.svg" alt="">
 
       </div>
 
+      <!-- 정보 섹션 -->
       <div class="about-section">
-
+        <!-- 회사 정보 -->
         <div class="company-section">
           <h3>About</h3>
-
           <div class="company-sub">
             <h6>상호명 : 주식회사 쉽차장</h6>
             <h6>주소 : 광주광역시 동구 동계천로 150, IPLEX 103호</h6>
-            <h6>대표 : 김형우 | 사업자 등록 번호: 414-87-03129 </h6>
+            <h6>대표 : 김형우 | 사업자 등록 번호: 414-87-03129</h6>
             <h6>통신판매업번호 : 2024-광주동구-0492</h6>
             <h6>전화번호 : 010-7515-5087</h6>
             <h6>이메일 : contact@shipchajang.com</h6>
           </div>
-
         </div>
 
+        <!-- SNS 섹션 -->
         <div class="company-section">
           <h3>SNS</h3>
-
           <div class="company-sub">
-            <a href="https://www.instagram.com/novalink.official/" target="_blank">
-              <i class="fa-brands fa-instagram fa-2xl" style="color: white;"></i>
+            <a href="https://www.instagram.com/novalink.official/" target="_blank" aria-label="Instagram">
+              <i class="fa-brands fa-instagram fa-2xl" style="color: black;"></i>
             </a>
           </div>
-
         </div>
 
+        <!-- 법적 정보 -->
         <div class="company-section">
           <h3>Legal</h3>
-
           <div class="company-sub">
             <router-link to="/terms">이용 약관</router-link>
             <router-link to="/privacy">개인정보처리방침</router-link>
             <router-link to="/rule">위치정보 이용약관</router-link>
-            <h6 style="margin-top: 2rem;">Copyright ⓒ 2024 Shipchajang Co, Ltd. All Rights Reserved</h6>
           </div>
-
         </div>
-
-
+        <h6 class="copyright">Copyright ⓒ 2024 Shipchajang Co, Ltd. All Rights Reserved</h6>
       </div>
     </div>
   </div>
@@ -55,32 +61,94 @@
 
 <script>
 export default {
-  name: 'footerPage'
-}
+  name: 'FooterPage',
+};
 </script>
 
-<style>
+<style scoped>
+/* 기본 레이아웃 */
 .footer-wrapper {
-  background-color: #5B67EC;
-  color: white;
+  background-image: url('@/assets/icons/New.svg');
+  /* background-size: cover; 이미지가 영역을 덮도록 설정 */
+  background-size: auto;
+  background-position: center;
+  /* 이미지의 중심을 기준으로 배치 */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: black;
+  height: 100vh;
 }
 
+/* 상단 콘텐츠 섹션 */
+.content-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 10rem;
+  text-align: center;
+  position: relative;
+  top: 2rem;
+}
+
+.text-section h1 {
+  margin: 1rem 0;
+  font-size: 2.5rem;
+  font-weight: 900;
+}
+
+.text-section h1:first-child {
+  margin-top: 3rem;
+  /* 첫 번째 h1에만 적용 */
+}
+
+/* 버튼 스타일 */
+.router-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #5B67EC;
+  color: white !important;
+  padding: 0.8rem 2rem;
+  font-size: 25px;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 20rem;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  margin-top: 3rem;
+  margin-bottom: 5rem;
+  width: 15rem;
+  /* 버튼 크기를 자동으로 조정 */
+  height: 2.5rem;
+  /* 높이도 콘텐츠에 따라 조정 */
+}
+
+.router-link:hover {
+  background-color: #434FCF;
+  transform: translateY(-2px);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.router-link:active {
+  background-color: #3C46B8;
+  transform: translateY(1px);
+  box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.2);
+}
+
+
+/* 하단 푸터 섹션 */
 .footerPage {
-  padding-top: 5rem;
-  padding-left: 10rem;
-  padding-right: 10rem;
+  padding: 2rem 10rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   gap: 15rem;
+  /* border-top : 1px solid #e4e5e9; */
 }
 
-.footerPage p {
-  font-size: 30px;
-  font-weight: 900;
-  font-family: 'NanumSquareNeoHeavy';
-}
-
+/* 심볼 섹션 */
 .symbol-section {
   display: flex;
   flex-direction: column;
@@ -89,37 +157,22 @@ export default {
   flex: 1;
 }
 
+.symbol-image {
+  width:80%;
+  height: auto;
+  max-width: 100%;
+}
+
+.footerPage p {
+  font-size: 30px;
+  font-weight: 900;
+  font-family: 'NanumSquareNeoHeavy';
+  text-align: center;
+}
+
+/* 정보 섹션 */
 .about-section {
   flex: 2;
-  justify-content: end;
-}
-
-.symbol-image {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  width: 250px;
-
-}
-
-.company-section h6 {
-  font-size: 16px;
-  font-weight: 400;
-  margin: 0;
-  /* 모든 방향의 마진 제거 */
-  padding: 0;
-  /* 모든 방향의 패딩 제거 */
-  margin-bottom: 1rem;
-}
-
-.company-section h6:last-child {
-  margin-bottom: 0;
-  /* 마지막 링크는 간격 제거 */
-}
-
-.company-section i {
-  justify-content: center;
-
 }
 
 .company-section {
@@ -127,47 +180,66 @@ export default {
   flex-direction: row;
   gap: 5rem;
   align-items: flex-start;
-  text-align: start;
   margin-bottom: 1rem;
 }
 
 .company-section:last-child {
   margin-bottom: 0;
-  /* 마지막 링크는 간격 제거 */
 }
 
 .company-section h3 {
+  margin-top: 0.5rem;
   margin-right: 5rem;
   min-width: 100px;
-  /* 고정 너비로 정렬 안정화 */
-  margin-top: 0.5rem;
+  font-size: 18px;
 }
 
 .company-sub {
   flex: 1;
   padding: 10px;
-
-
 }
 
-a {
+.company-section h6 {
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0 0 1rem;
+}
+
+.company-section h6:last-child {
+  margin-bottom: 0;
+}
+
+/* SNS 아이콘 */
+.company-section i {
+  justify-content: center;
+}
+
+/* 링크 스타일 */
+a,
+router-link {
   text-decoration: none;
   font-weight: 900;
-
+  color: inherit;
 }
 
-a:visited {
-  color: white;
+a:visited,
+router-link:visited {
+  color: inherit;
 }
 
 .company-sub a {
-  text-decoration: none;
   margin-right: 5rem;
-  /* 오른쪽 간격 */
 }
 
 .company-sub a:last-child {
   margin-right: 0;
-  /* 마지막 링크는 간격 제거 */
+}
+
+/* 저작권 정보 */
+.copyright {
+  margin-top: 2rem;
+  font-size: 14px;
+  text-align: end;
+  font-weight: 100;
 }
 </style>

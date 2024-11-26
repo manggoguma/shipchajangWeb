@@ -1,37 +1,32 @@
 <template>
-    <div>
-      <Fullpage />
+  <div>
+    <Fullpage />
+    <featuresPage />
     <NumCard />
+    <aboutUs />
+  </div>
+</template>
 
-      <playStores />
-      <featuresPage />
- 
-      
-      
-    </div>
-  </template>
-  
-  <script>
-  import Fullpage from './FullPage.vue';
-  import playStores from './playstores.vue';
-  import featuresPage from './features.vue';
-  import NumCard from './numCard.vue';
-  
-  
-  export default {
-    name: "App",
-    components: {
-     
-      Fullpage,
-      playStores,
-      featuresPage,
-      
-      NumCard,
-      
-    },
-  };
-  </script>
-  
-  <style>
+<script>
+import Fullpage from './FullPage.vue';
 
-  </style>
+import featuresPage from './features.vue';
+import NumCard from './numCard.vue';
+import aboutUs from './aboutUs.vue';
+
+
+export default {
+  name: "App",
+  components: {
+
+    Fullpage,
+
+    featuresPage,
+    NumCard,
+    aboutUs
+
+  },
+};
+</script>
+
+<style></style>
