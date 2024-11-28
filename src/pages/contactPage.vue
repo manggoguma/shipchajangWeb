@@ -116,10 +116,12 @@ export default {
 textarea,
 input {
   width: 100%;
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
   font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  border: 1.5px solid black;
+  background-color: transparent;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
 }
 
 textarea.additional-info {
@@ -137,7 +139,6 @@ textarea.additional-info {
   }
   
   .contact-content {
-
     width: 100%;
   }
   
