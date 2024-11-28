@@ -1,33 +1,59 @@
 <template>
   <div class="container">
     <div class="vm-title">
-      <h1>합법적이고 편리한 주차의 새로운 표준</h1>
+      <!-- 일반 해상도 -->
+      <h1 v-if="!isSmallScreen">합법적이고 편리한 주차의 새로운 표준</h1>
+      <!-- 소형 모바일 해상도 -->
+      <h1 v-else>합법적이고 편리한<br>주차의 새로운 표준</h1>
     </div>
     <div class="vm-text">
-      <div class="vision-text">
+      <div v-if="!isSmallScreen" class="vision-text">
         쉽차장은 모든 사람들이 불법 주차 과태료 걱정 없이,
       </div>
-      <div class="vision-text">
+      <div v-else class="vision-text">
+        쉽차장은 모든 사람들이 <br>불법 주차 과태료 걱정 없이,
+      </div>
+      <div v-if="!isSmallScreen" class="vision-text">
         어디서든 편리하게 주차 공간을 찾고 예약할 수 있는 서비스를 제공합니다.
       </div>
-
-      <div class="vision-text  margin-top">
-        우리는 주차를 단순한 행위가 아닌, 스트레스 없는 자연스러운 일상의
+      <div v-else class="vision-text">
+        어디서든 편리하게 주차 공간을 찾고 <br> 예약할 수 있는 서비스를 제공합니다.
       </div>
-      <div class="vision-text">
-        일부로 만들어가며, 합법적이고 효율적인 주차 문화를 정착시키고자 합니다.
+      <div v-if="!isSmallScreen" class="vision-text margin-top">
+        우리는 주차를 단순한 행위가 아닌, 스트레스 없는 자연스러운 일상의 일부로 만들어가며,
+      </div>
+      <div v-else class="vision-text">
+        우리는 주차를 단순한 행위가 아닌, <br> 스트레스 없는 자연스러운 일상의<br> 일부로 만들어가며,
+      </div>
+      <div v-if="!isSmallScreen" class="vision-text">
+        합법적이고 효율적인 주차 문화를 정착시키고자 합니다.
+      </div>
+      <div v-else class="vision-text">
+        합법적이고 효율적인 <br> 주차 문화를 정착시키고자 합니다.
       </div>
     </div>
-
   </div>
 </template>
+
 
 <script>
 export default {
   name: "AboutUs",
+  data() {
+    return {
+      isSmallScreen: false, // 화면 크기에 따라 상태 관리
+    };
+  },
   mounted() {
+    this.checkScreenSize();
+    window.addEventListener("resize", this.checkScreenSize);
     // 스크롤 이벤트 등록
     window.addEventListener("scroll", this.handleScroll);
+  },
+  beforeDestroy() {
+    // 스크롤 및 리사이즈 이벤트 제거
+    window.removeEventListener("scroll", this.handleScroll);
+    window.removeEventListener("resize", this.checkScreenSize);
   },
   methods: {
     handleScroll() {
@@ -43,20 +69,20 @@ export default {
         }
       });
     },
-  },
-  beforeDestroy() {
-    // 메모리 누수를 방지하기 위해 이벤트 제거
-    window.removeEventListener("scroll", this.handleScroll);
+    checkScreenSize() {
+      this.isSmallScreen = window.innerWidth <= 480; // 480px 이하인 경우 true
+    },
   },
 };
 </script>
+
 
 <style scoped>
 /* Container Styles */
 .container {
   padding: 20rem;
   height: 100vh;
-  background: url('@/assets/icons/aboutUSbg.svg') center / auto no-repeat fixed;
+  background: url('@/assets/icons/about.svg') center / auto no-repeat fixed;
   color: black;
 }
 
@@ -120,7 +146,80 @@ export default {
     /* 제자리에서 원래 크기 */
   }
 }
+
 .margin-top {
-  margin-top: 7rem; /* 원하는 마진 값 설정 */
+  margin-top: 7rem;
+  /* 원하는 마진 값 설정 */
+}
+
+/* 태블릿 (1024px 이하) */
+@media screen and (max-width: 1024px) {
+  .container {
+    padding: 10rem;
+    height: auto;
+    background-size: contain;
+  }
+
+  .vm-title {
+    font-size: 1.3rem;
+    margin-bottom: 3rem;
+  }
+
+  .vm-text {
+    text-align: center;
+  }
+
+  .vision-text {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .margin-top {
+    margin-top: 5rem;
+  }
+}
+
+/* 모바일 (768px 이하) */
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 5rem 2rem;
+  }
+
+  .vm-title {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+
+  .vision-text {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+
+  .margin-top {
+    margin-top: 4rem;
+  }
+}
+
+/* 소형 모바일 (480px 이하) */
+@media screen and (max-width: 480px) {
+  .container {
+    padding: 3rem 2rem;
+  }
+
+  .vm-title {
+    font-size: 0.8rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    /* 텍스트 중앙 정렬 */
+  }
+
+  .vision-text {
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .margin-top {
+    margin-top: 3rem;
+  }
 }
 </style>

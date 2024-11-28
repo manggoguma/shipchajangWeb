@@ -34,8 +34,6 @@
             <img src="../assets/icons/carimg.svg" alt="Car" />
             <img src="../assets/icons/arrowimg.svg" alt="Arrow" />
           </div>
-
-
           <div class="link-section">
             <a href="https://www.shipchajang.com/">
               <img src="../assets/icons/blackgoogle.svg" alt="App Store" />
@@ -44,6 +42,8 @@
               <img src="../assets/icons/blackapple.svg" alt="Google Play" />
             </a>
           </div>
+
+
         </div>
       </div>
     </div>
@@ -221,17 +221,19 @@ export default {
 .image-container {
   position: relative;
   width: 100%;
-  height: 300px;
-  /*이미지 높이*/
+  height: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 2rem;
+  overflow: hidden;
+  
 }
 
 /* 공통 이미지 스타일 */
 .image-container img {
   position: absolute;
+    height: auto; /* 비율 유지 */
+  object-fit: contain; /* 이미지를 비율에 맞게 유지 */
 }
 
 /* mention 이미지 */
@@ -305,7 +307,7 @@ export default {
 }
 
 .link-section {
-  margin-top: 10rem;
+  margin-top: 5rem;
   /* 링크 섹션의 위쪽 여백 */
   display: flex;
   gap: 20px;
@@ -366,6 +368,96 @@ export default {
   }
   100% {
     opacity: 1; /* 완전 표시 */
+  }
+}
+
+/* 미디어쿼리 */
+@media screen and (max-width: 1024px) {
+  .content {
+    width: 70vw;
+  }
+
+  .typing-container {
+    font-size: 28px;
+    margin-bottom: 5rem;
+  }
+
+  .image-warpper {
+    width: 24rem;
+    height: 24rem;
+  }
+
+  .image-container {
+    height: 250px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .content {
+    width: 90vw;
+  }
+
+  .typing-container {
+    font-size: 20px;
+    margin-bottom: 3rem;
+  }
+
+  .image-warpper {
+    width: 20rem;
+    height: 20rem;
+  }
+
+  .image-container {
+    height: 200px;
+  }
+
+  .link-section {
+    margin-top: 5rem;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .content {
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  .typing-container {
+    border: #000 4px solid;
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+  }
+
+  .image-warpper {
+    width: 15rem;
+    height: 15rem;
+  }
+
+  .image-container {
+    width: 100%;
+    height:20rem;
+  }
+
+  .link-section {
+    margin-top: 2rem;
+    gap: 5px;
+  }
+  .image-container img:nth-child(2) {
+    animation: diagonalSlideInMobile 3s ease-in-out forwards;
+    animation-delay: 0.7s;
+  }
+}
+
+@keyframes diagonalSlideInMobile {
+  0% {
+    transform: translate(-10%, 0%) scale(0.7);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-73%, 58%) scale(1);
+    opacity: 1;
   }
 }
 </style>

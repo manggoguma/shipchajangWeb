@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="display-area">
-      <div class="display-image" >
+      <div class="display-image">
         <img :src="currentContent.image" alt="전환 이미지" />
       </div>
       <div class="display-text">
@@ -70,7 +70,7 @@ export default {
       const sections = document.querySelectorAll(".trigger-section");
       const options = {
         root: null,
-        threshold: 0.1, 
+        threshold: 0.1,
       };
 
       const observer = new IntersectionObserver(this.handleIntersect, options);
@@ -157,7 +157,7 @@ export default {
   /* 텍스트 가운데 정렬 */
   opacity: 1;
   transition: opacity 1s ease-in-out;
-  
+
   flex: 1;
 }
 
@@ -169,10 +169,11 @@ export default {
   padding: 0.5rem;
   margin-bottom: 3rem;
 }
+
 .display-text h1 {
-font-size :1.7rem ;
- margin-bottom : 0.1rem;
- font-family: NanumSquareNeoExtraBold;
+  font-size: 1.7rem;
+  margin-bottom: 0.1rem;
+  font-family: NanumSquareNeoExtraBold;
 }
 
 .scroll-trigger {
@@ -185,5 +186,137 @@ font-size :1.7rem ;
 .trigger-section {
   height: 100vh;
   /* 화면 전체 크기의 섹션 */
+}
+
+/* 미디어 쿼리: 태블릿 (1024px 이하) */
+@media screen and (max-width: 1024px) {
+  .container {
+    padding: 0 5rem;
+  }
+
+  .display-area {
+    gap: 0;
+    width: 100%;
+    padding: 2rem;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .display-image {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .display-image img {
+    width: 80vw;
+    height: auto;
+    object-fit: contain;
+    max-height: 60vh;
+  }
+
+  .display-text {
+    flex: 1;
+    text-align: left;
+    padding-left: 2rem;
+  }
+
+  .display-text h1 {
+    font-size: 1.3rem;
+    line-height: 1.5;
+  }
+
+  .display-text h3 {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+
+  .scroll-trigger {
+    gap: 80px;
+  }
+}
+
+/* 미디어 쿼리: 모바일 (768px 이하) */
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 0 2rem;
+    margin-top: 3rem;
+  }
+
+  .display-area {
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    padding: 1.5rem;
+  }
+
+  .display-image {
+    width: 100%;
+    height: auto;
+  }
+
+  .display-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .display-text h1 {
+    font-size: 1.3rem;
+  }
+
+  .display-text h3 {
+    font-size: 0.9rem;
+    padding: 0.4rem;
+  }
+
+  .scroll-trigger {
+    gap: 60px;
+  }
+}
+
+/* 미디어 쿼리: 소형 모바일 (480px 이하) */
+@media screen and (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
+    margin-top: 2rem;
+  }
+
+  .display-area {
+    flex-direction: column-reverse;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .display-image img {
+    width: 100%;
+    height: auto;
+  }
+
+  .display-text {
+    padding-left: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .display-text h1 {
+    font-size: 1.1rem;
+  }
+
+  .display-text h3 {
+    font-size: 0.8rem;
+    padding: 0.3rem;
+    margin-bottom: 1rem;
+  }
+
+  .scroll-trigger {
+    gap: 80px;
+  }
+
+  .trigger-section {
+    height: 80vh;
+    /* 섹션 높이를 화면 크기에 맞춰 조정 */
+  }
 }
 </style>

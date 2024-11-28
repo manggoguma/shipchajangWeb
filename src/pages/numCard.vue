@@ -20,6 +20,7 @@
             <h2>{{ formatNumber(displayedParkingCount) }}</h2>
             <p>개</p>
           </div>
+         
           <img class="img-second" src="../assets/icons/numcard2.svg" alt="카드 이미지">
         </div>
         <div>
@@ -145,7 +146,7 @@ export default {
   box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 36px 0px;
   width: 350px;
   padding: 2rem;
-  overflow: visible;
+  overflow: hidden;
   box-sizing: border-box;
 }
 
@@ -161,6 +162,7 @@ export default {
   width: 100%;
   height: auto;
   opacity: 0.9;
+  object-fit: contain;
 }
 
 /* 두 번째 카드 스타일 */
@@ -208,5 +210,158 @@ export default {
 .infoCardSecond>div .numSection {
   position: relative;
   z-index: 1;
+}
+
+/* 태블릿 (1024px 이하) */
+@media screen and (max-width: 1024px) {
+  #general-section {
+    padding: 5rem;
+    font-size: 20px;
+  }
+
+  .cardPage {
+    flex-direction: column;
+    gap: 15px;
+    padding: 5rem;
+    height: auto;
+  }
+
+  .infoCardFirst,
+  .infoCardSecond>div {
+    width: 100%;
+  }
+
+  .numSection h2 {
+    font-size: 45px;
+    margin: 0.5rem;
+  }
+
+  .numSection p {
+    font-size: 18px;
+  }
+
+  .infoCardSecond>div>.img-second,
+  .infoCardSecond>div>.img-third {
+    width: 50%;
+  }
+}
+
+/* 모바일 (768px 이하) */
+@media screen and (max-width: 768px) {
+  #general-section {
+    padding: 3rem 2rem;
+    font-size: 18px;
+  }
+
+  .cardPage {
+    gap: 10px;
+    padding: 3rem;
+    flex-direction: column;
+    /* 세로 정렬 */
+    align-items: stretch;
+    /* 자식 요소의 너비를 동일하게 설정 */
+  }
+
+  .infoCardFirst,
+  .infoCardSecond>div {
+    padding: 1.5rem;
+    width: 100%;
+    /* 부모 컨테이너의 너비에 맞춤 */
+    box-sizing: border-box;
+    /* 패딩을 포함하여 계산 */
+    min-height: 250px;
+
+
+    
+    /* 최소 높이 동일하게 설정 */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* 내용물이 고르게 분배되도록 설정 */
+  }
+
+  .numSection h2 {
+    font-size: 35px;
+    margin: 0.3rem;
+  }
+
+  .numSection p {
+    font-size: 16px;
+  }
+
+  .infoCardFirst img,
+  .infoCardSecond>div>.img-second,
+  .infoCardSecond>div>.img-third {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    /* 이미지 비율 유지 */
+    opacity: 0.85;
+  }
+}
+
+/* 소형 모바일 (480px 이하) */
+@media screen and (max-width: 480px) {
+  #general-section {
+    padding: 2rem 1rem;
+    font-size: 16px;
+  }
+
+  .cardPage {
+    gap: 8px;
+    padding: 2rem;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .infoCardFirst,
+  .infoCardSecond>div {
+    padding: 1rem;
+    border-radius: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    position: relative; 
+  }
+
+  .numSection h2 {
+    font-size: 30px;
+    margin: 0.2rem;
+  }
+
+  .numSection p {
+    font-size: 14px;
+  }
+
+  .infoCardFirst img {
+    bottom: -7rem;
+    width: 100%;
+    object-fit: contain;
+    /* 이미지 비율 유지 */
+    opacity: 0.8;
+  }
+
+  .infoCardSecond>div>.img-second {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    /* 이미지 비율 유지 */
+    opacity: 0.8;
+  }
+
+  .infoCardSecond>div>.img-third {
+    left: 4rem;
+    width: 100%;
+    height: 95%;
+    object-fit: contain;
+    /* 이미지 비율 유지 */
+    opacity: 0.8;
+  }
+
+  .card-footer {
+    font-size: 12px;
+  }
 }
 </style>

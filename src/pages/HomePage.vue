@@ -18,9 +18,7 @@ import aboutUs from './aboutUs.vue';
 export default {
   name: "App",
   components: {
-
     Fullpage,
-
     featuresPage,
     NumCard,
     aboutUs

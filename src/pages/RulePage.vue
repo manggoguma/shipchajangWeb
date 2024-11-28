@@ -77,5 +77,58 @@
     font-size: 0.9rem;
     line-height: 1.5;
   }
+  /* 미디어 쿼리: 태블릿 (1024px 이하) */
+@media screen and (max-width: 1024px) {
+  .terms {
+    padding: 5rem;
+  }
+
+  select {
+    font-size: 0.9rem;
+    padding: 0.4rem;
+  }
+
+  .terms-content {
+    padding: 2rem 3rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* 미디어 쿼리: 모바일 (768px 이하) */
+@media screen and (max-width: 768px) {
+  .terms {
+    padding: 2rem;
+  }
+
+  select {
+    font-size: 0.8rem;
+    padding: 0.3rem;
+  }
+
+  .terms-content {
+    padding: 1.5rem 2rem;
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+}
+
+/* 미디어 쿼리: 소형 모바일 (480px 이하) */
+@media screen and (max-width: 480px) {
+  .terms {
+    padding: 1rem;
+  }
+
+  select {
+    font-size: 0.75rem;
+    padding: 0.2rem;
+  }
+
+  .terms-content {
+    padding: 1rem 1.5rem;
+    font-size: 0.75rem;
+    line-height: 1.3;
+  }
+}
+
   </style>
   

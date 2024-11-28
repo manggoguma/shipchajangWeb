@@ -1,131 +1,150 @@
 <template>
-    <div class="contact-container">
-
-      <div class="contact-content">
-        <div class="contact-intro">
-          <h2>쉽차장과 함께 비즈니스를 시작해보세요.</h2>
-          <p>양식에 맞춰 제출해주시면 빠른 시일 내에 연락드리겠습니다.</p>
-        </div>
-        <form @submit.prevent="handleSubmit" class="contact-form">
-          <div v-if="error" class="form-error">{{ error }}</div>
-          <div
-            v-for="(field, key) in formData"
-            :key="key"
-            class="form-group"
-          >
-            <label :for="key">{{ key }}</label>
-            <template v-if="key === '기타사항'">
-              <textarea
-                :id="key"
-                :name="key"
-                v-model="field.value"
-                :placeholder="field.placeholder"
-                rows="3"
-                class="additional-info"
-              ></textarea>
-            </template>
-            <template v-else>
-              <input
-                type="text"
-                :id="key"
-                :name="key"
-                v-model="field.value"
-                :placeholder="field.placeholder"
-                :required="['이름', '연락처', '주차장주소'].includes(key)"
-                @input="handleInputChange(key, field.value)"
-              />
-            </template>
-          </div>
-          <button type="submit">제출하기</button>
-        </form>
+  <div class="contact-container">
+    <div class="contact-content">
+      <div class="contact-intro">
+        <h1>내 건물 주차 관리, 이제 쉽차장에 맡기고 수익으로 바꿔보세요!</h1>
       </div>
 
+      <form @submit.prevent="handleSubmit" class="contact-form">
+        
+        <div
+          v-for="(placeholder, key) in placeholders"
+          :key="key"
+          class="form-group"
+        >
+          <label :for="key">{{ key }}</label>
+          <template v-if="key === '기타사항'">
+            <textarea
+              :id="key"
+              :name="key"
+              v-model="formData[key]"
+              :placeholder="placeholder"
+              rows="3"
+              class="additional-info"
+            ></textarea>
+          </template>
+          <template v-else>
+            <input
+              type="text"
+              :id="key"
+              :name="key"
+              v-model="formData[key]"
+              :placeholder="placeholder"
+              :required="Object.keys(formData).some(
+                (requiredKey) =>
+                  requiredKey.includes('(필수)') && requiredKey === key
+              )"
+              @input="handleInputChange(key)"
+            />
+          </template>
+        </div>
+        <div v-if="error" class="form-error">{{ error }}</div>
+        <button type="submit">제출하기</button>
+      </form>
     </div>
-  </template>
-  
-  <script>
-  
- export default {
-    name: "contactPage",
-    components: {
-    },
-    data() {
-      return {
-        formData: {
-          이름: { value: "", placeholder: "(필수) 이름을 입력해주세요" },
-          연락처: { value: "", placeholder: "(필수) 숫자만 입력 (예: 01012345678)" },
-          주차장주소: { value: "", placeholder: "(필수) 주차장 주소를 입력해주세요" },
-          주차허용면: { value: "", placeholder: "(선택) 허용 면 수를 입력해주세요 (예: 20면)" },
-          주차허용시간: { value: "", placeholder: "(선택) 허용 시간을 입력해주세요 (예: 09:00 ~ 17:00)" },
-          기타사항: { value: "" },
-        },
-        error: "",
-      };
-    },
-    methods: {
-      handleInputChange(key, value) {
-        // 연락처 유효성 검사
-        if (key === "연락처" && value && !/^\d*$/.test(value)) {
-          this.error = "연락처는 숫자만 입력 가능합니다.";
-          return;
-        }
-        this.error = "";
+  </div>
+</template>
+
+<script>
+export default {
+  name: "contactPage",
+  data() {
+    return {
+      formData: {
+        "이름(필수)": "",
+        "연락처(필수)": "",
+        "이메일(필수)": "",
+        "주차장주소(필수)": "",
+        "문의내용": "",
       },
-      handleSubmit() {
-        // 필수 필드 확인
-        const { 이름, 연락처, 주차장주소 } = this.formData;
-        if (!이름.value || !연락처.value || !주차장주소.value) {
-          this.error = "이름, 연락처, 주차장주소는 필수 입력 사항입니다.";
+      placeholders: {
+        "이름(필수)": "홍길동",
+        "연락처(필수)": "01012341234",
+        "이메일(필수)": "shipchajang@naver.com",
+        "주차장주소(필수)": "광주광역시 동구 동계천로 150, IPLEX 103호",
+        "문의내용": "주차 가능 대수, 공유 시간등을 적어주시면, 상담이 더 빨라져요!",
+      },
+      error: "",
+    };
+  },
+  methods: {
+    handleInputChange(key) {
+      const value = this.formData[key];
+      if (key === "연락처(필수)" && value && !/^\d*$/.test(value)) {
+        this.error = "연락처는 숫자만 입력 가능합니다.";
+      } else {
+        this.error = "";
+      }
+    },
+    handleSubmit() {
+      const requiredFields = Object.keys(this.formData).filter((key) =>
+        key.includes("(필수)")
+      );
+
+      for (const field of requiredFields) {
+        if (!this.formData[field]) {
+          this.error = `${field}은(는) 필수 입력 사항입니다.`;
           return;
         }
-  
-        // 폼 데이터를 서버로 전송
-        const fullFormData = Object.fromEntries(
-          Object.entries(this.formData).map(([key, field]) => [key, field.value])
-        );
-  
-        fetch("http://localhost:3000/send-email", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(fullFormData),
+      }
+
+      fetch("http://localhost:3000/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(this.formData),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.success) {
+            alert("성공적으로 접수되었습니다. 빠른 시일 내에 연락드리겠습니다.");
+          } else {
+            this.error = data.message;
+          }
         })
-          .then((response) => response.json())
-          .then((data) => {
-            if (data.success) {
-              alert("성공적으로 접수되었습니다. 빠른 시일 내에 연락드리겠습니다.");
-            } else {
-              this.error = data.message;
-            }
-          })
-          .catch((error) => {
-            this.error = "서버와의 통신 중 오류가 발생했습니다. 다시 시도해주세요.";
-            console.error("Error:", error);
-          });
-  
-        this.error = "";
-      },
+        .catch((error) => {
+          this.error = "서버와의 통신 중 오류가 발생했습니다. 다시 시도해주세요.";
+          console.error("Error:", error);
+        });
+
+      this.error = "";
     },
-  };
-  </script>
-  
-  <style scoped>
-  .contact-container {
+  },
+};
+</script>
+<style scoped>
+/* 스타일 추가 */
+textarea,
+input {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+textarea.additional-info {
+  resize: none;
+}
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.contact-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 2rem;
+    padding: 5rem 20rem;
   }
   
   .contact-content {
-    max-width: 600px;
+
     width: 100%;
   }
   
   .contact-intro {
     text-align: center;
     margin-bottom: 2rem;
+    border-bottom: 4px solid black;
   }
   
   .contact-form {
@@ -156,5 +175,4 @@
   button:hover {
     background-color: #0056b3;
   }
-  </style>
-  
+</style>

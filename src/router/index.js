@@ -10,27 +10,32 @@ const routes = [
     path: '/', // 기본 경로
     name: 'Home',
     component: HomePage,
+    meta : {footer:'main'},
   },
   
   {
     path: '/terms',
     name: 'TermsPage',
     component: TermsPage,
+   
   },
   {
     path: '/rule',
     name: 'RulePage',
     component: RulePage,
+   
   },
   {
     path: '/privacy',
     name: 'PrivacyPage',
     component: PrivacyPage,
+  
   },
   {
     path: '/contactPage',
     name: 'contactPage',
     component: contactPage,
+    meta : {footer:'sub'},
   },
 ];
 

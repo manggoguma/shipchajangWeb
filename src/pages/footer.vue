@@ -56,6 +56,9 @@
         <h6 class="copyright">Copyright ⓒ 2024 Shipchajang Co, Ltd. All Rights Reserved</h6>
       </div>
     </div>
+    <div class="cars-image-wrapper">
+      <img src="../assets/icons/cars.svg" alt="Cars">
+    </div>
   </div>
 </template>
 
@@ -157,8 +160,8 @@ export default {
   flex: 1;
 }
 
-.symbol-image {
-  width:80%;
+.symbol-section {
+  width: 80%;
   height: auto;
   max-width: 100%;
 }
@@ -241,5 +244,223 @@ router-link:visited {
   font-size: 14px;
   text-align: end;
   font-weight: 100;
+}
+.cars-image-wrapper {
+  display: none; /* 기본적으로 숨김 */
+}
+.cars-image-wrapper img {
+  display: none; /* 기본적으로 숨김 */
+}
+
+/* 미디어쿼리 */
+@media screen and (max-width: 1024px) {
+
+  .content-section {
+    padding: 2rem 5rem;
+  }
+
+  .text-section h1 {
+    font-size: 2rem;
+  }
+
+  .router-link {
+    font-size: 20px;
+    width: 12rem;
+    height: 2.2rem;
+  }
+
+  .footer-wrapper {
+    background-image: url('@/assets/icons/태블릿용 1024px.svg');
+    background-size: contain;
+    background-position: center;
+    /* 이미지의 중심을 기준으로 배치 */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: black;
+    height: 100vh;
+  }
+
+  .footerPage {
+    padding: 2rem 5rem;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .symbol-section {
+    display: flex;
+    /* Flexbox 활성화 */
+    justify-content: flex-start;
+    /* 가로 방향 시작 정렬 */
+    align-items: flex-start;
+    /* 세로 방향 시작 정렬 */
+  }
+
+  .symbol-section>img {
+    align-self: flex-start;
+    justify-self: flex-start;
+    text-align: left;
+  }
+
+  .symbol-section {
+    width: 60%;
+  }
+
+  .company-section {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+}
+
+.cars-image-wrapper {
+  display: flex;
+  /* Flexbox 레이아웃 활성화 */
+  justify-content: center;
+  /* 가로 정렬 */
+}
+
+.cars-image-wrapper img {
+  width: 150%;
+  /* 이미지 크기 조정 */
+  height: auto;
+  /* 비율 유지 */
+}
+
+@media screen and (max-width: 768px) {
+  .content-section {
+    padding: 2rem;
+  }
+
+  .text-section h1 {
+    font-size: 1.8rem;
+  }
+
+  .router-link {
+    font-size: 18px;
+    width: 10rem;
+    height: 2rem;
+  }
+
+  .footer-wrapper {
+    background-size: 100%;
+    background-position: top center;
+    background-attachment: scroll;
+    /* 스크롤 시 배경 움직임 */
+  }
+
+  .footerPage {
+    padding: 1rem 2rem;
+    gap: 1.5rem;
+  }
+
+  .symbol-section {
+    align-items: center;
+  }
+
+  .symbol-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+  }
+
+  .symbol-section>img {
+
+    width: 30%;
+
+  }
+
+  .company-section {
+    gap: 1rem;
+  }
+
+  .company-section h3 {
+    font-size: 16px;
+  }
+
+  .company-section h6 {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+
+  .content-section {
+    padding: 1rem;
+  }
+
+  .text-section h1 {
+    font-size: 1.5rem;
+  }
+
+  .router-link {
+    font-size: 16px;
+    width: 8rem;
+    height: 1.8rem;
+  }
+
+  .footerPage {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .footer-wrapper {
+    background-size: 120%;
+    /* 작은 화면에서는 더 확대 */
+    background-position: top left;
+    /* 이미지 상단 왼쪽 정렬 */
+    background-repeat: no-repeat;
+    /* 반복 방지 */
+    background-attachment: scroll;
+    /* 스크롤 시 배경 움직임 */
+  }
+
+  .symbol-section {
+    align-items: center;
+  }
+
+  .symbol-section {
+
+    display: flex;
+    /* Flexbox 활성화 */
+    justify-content: center;
+    /* 가로 가운데 정렬 */
+    align-items: center;
+    /* 세로 가운데 정렬 */
+    width: 100%;
+    /* 부모 컨테이너 너비 맞춤 */
+    height: auto;
+    /* 필요한 높이 조정 */
+  }
+
+  .symbol-section>img {
+    width: 40%;
+    margin-bottom: 2rem;
+  }
+
+  .company-section {
+    gap: 0.5rem;
+  }
+
+  .company-sub a {
+    font-size: 0.8rem;
+    /* 텍스트 크기 더 줄이기 */
+    margin-right: 1.5rem;
+  }
+
+  .company-section h3 {
+    font-size: 14px;
+    margin-bottom: 0;
+  }
+
+  .company-section h6 {
+    font-size: 12px;
+  }
+
+  .copyright {
+    font-size: 0.5rem;
+    text-align: center;
+  }
 }
 </style>
