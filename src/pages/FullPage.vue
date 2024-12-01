@@ -150,7 +150,6 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-
   opacity: 0;
   transition: opacity 1s ease, transform 1s ease;
 }
@@ -243,11 +242,8 @@ export default {
   left: 43%;
   transform: translateX(-60%);
   opacity: 0;
-  /* 초기 상태 숨김 */
   animation: fadeIn 0.8s ease-in-out forwards;
-  /* 애니메이션 설정 */
   animation-delay: 3s;
-  /* car 애니메이션 후 시작 */
 }
 
 /* car 이미지 */
@@ -256,13 +252,9 @@ export default {
   top: 20px;
   left: 70%;
   transform: translateX(0%) scale(1);
-  /* x축 초기 이동을 제거 */
   opacity: 0;
-  /* 초기 숨김 상태 */
   animation: diagonalSlideIn 2s ease-in-out forwards;
-  /* 부드러운 애니메이션 */
   animation-delay: 0.3s;
-  /* 시작 지연 */
 }
 
 /* arrow 이미지 */
@@ -270,7 +262,6 @@ export default {
   z-index: 2;
   position: absolute;
   top: 100px;
-  /* 위치 조정 */
   left: 50%;
   transform: translateX(-50%);
 }
@@ -387,9 +378,6 @@ export default {
     height: 24rem;
   }
 
-  .image-container {
-    height: 250px;
-  }
 }
 
 @media screen and (max-width: 768px) {
@@ -405,16 +393,35 @@ export default {
   .image-warpper {
     width: 20rem;
     height: 20rem;
+
+  }
+ .image-container{
+  height: 50vh;
+
+ }
+  .image-container img:nth-child(1) {
+    top: 12vh; 
+    left: 25vw; 
+    width: 25vw;
   }
 
-  .image-container {
-    height: 200px;
+  .image-container img:nth-child(2) {
+    top: 10vh;
+    left: 50vw;
+    width: 30vw; /* 화면 너비의 30% 크기 */
+  }
+
+  .image-container img:nth-child(3) {
+    top: 25vh;
+    left: 50vw;
+    width: 20vw; /* 화면 너비의 20% 크기 */
   }
 
   .link-section {
-    margin-top: 5rem;
+    margin-top: 0;
     flex-direction: column;
     gap: 10px;
+
   }
 }
 
@@ -435,18 +442,26 @@ export default {
     height: 15rem;
   }
 
-  .image-container {
-    width: 100%;
-    height:20rem;
-  }
-
   .link-section {
     margin-top: 2rem;
     gap: 5px;
   }
+
+ .image-container img:nth-child(1) {
+    top: 19vh;
+    left: 47vw;
+    width: 30vw; /* 화면 너비의 30% 크기 */
+  }
+
   .image-container img:nth-child(2) {
-    animation: diagonalSlideInMobile 3s ease-in-out forwards;
-    animation-delay: 0.7s;
+    top: 21vh;
+    left: 77vw;
+    width: 35vw; /* 화면 너비의 35% 크기 */
+  }
+
+  .image-container img:nth-child(3) {
+    left: 55vw;
+    width: 35vw; /* 화면 너비의 25% 크기 */
   }
 }
 

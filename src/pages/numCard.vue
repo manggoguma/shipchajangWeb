@@ -213,6 +213,7 @@ export default {
 }
 
 /* 태블릿 (1024px 이하) */
+/* 태블릿 (1024px 이하) */
 @media screen and (max-width: 1024px) {
   #general-section {
     padding: 5rem;
@@ -220,64 +221,76 @@ export default {
   }
 
   .cardPage {
-    flex-direction: column;
-    gap: 15px;
+    flex-direction: row; /* 가로 정렬 유지 */
+    gap: 20px; /* 카드 간 간격 */
+    justify-content: center; /* 부모 안에서 카드 중앙 정렬 */
+    align-items: stretch; /* 카드 높이를 동일하게 정렬 */
     padding: 5rem;
     height: auto;
   }
 
   .infoCardFirst,
-  .infoCardSecond>div {
-    width: 100%;
+  .infoCardSecond > div {
+    width: 350px; /* 기본 카드 너비 유지 */
+    height: auto; /* 높이를 자동으로 조정 */
+    padding: 2rem; /* 기본 패딩 유지 */
+    display: flex;
+    flex-direction: column; /* 콘텐츠 세로 정렬 */
+    justify-content: space-between; /* 콘텐츠 간 간격 유지 */
+    align-items: center; /* 콘텐츠 중앙 정렬 */
+    box-sizing: border-box;
   }
 
   .numSection h2 {
-    font-size: 45px;
-    margin: 0.5rem;
+    font-size: 55px; /* 기본 폰트 크기 유지 */
+    margin: 1rem;
   }
 
   .numSection p {
-    font-size: 18px;
+    font-size: 20px;
   }
 
+  .infoCardFirst img,
   .infoCardSecond>div>.img-second,
   .infoCardSecond>div>.img-third {
-    width: 50%;
+    width: 100%;
+    height: auto;
+    object-fit: contain; /* 이미지 비율 유지 */
+    opacity: 0.85;
   }
 }
+
 
 /* 모바일 (768px 이하) */
 @media screen and (max-width: 768px) {
   #general-section {
+  display: flex;
+    justify-content: center; /* 수평 가운데 정렬 */
+    align-items: center; /* 수직 가운데 정렬 */
+    min-height: 100vh; /* 화면 높이만큼 설정 */
     padding: 3rem 2rem;
-    font-size: 18px;
   }
 
   .cardPage {
-    gap: 10px;
-    padding: 3rem;
+ display: flex;
     flex-direction: column;
-    /* 세로 정렬 */
-    align-items: stretch;
-    /* 자식 요소의 너비를 동일하게 설정 */
+    gap: 10px;
+    justify-content: center; /* 카드들이 부모 안에서 수직 중앙 정렬 */
+    align-items: center; /* 카드들이 부모 안에서 수평 중앙 정렬 */
+    width: 100%; /* 부모 너비에 맞춤 */
+    padding: 0; /* 불필요한 패딩 제거 */
   }
 
   .infoCardFirst,
-  .infoCardSecond>div {
-    padding: 1.5rem;
-    width: 100%;
-    /* 부모 컨테이너의 너비에 맞춤 */
-    box-sizing: border-box;
-    /* 패딩을 포함하여 계산 */
-    min-height: 250px;
-
-
-    
-    /* 최소 높이 동일하게 설정 */
+  .infoCardSecond > div {
+    width: 20rem; /* 고정 너비 */
+    height: 20rem; /* 고정 높이 */
+    padding: 1rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    /* 내용물이 고르게 분배되도록 설정 */
+    justify-content: center; /* 콘텐츠를 중앙에 배치 */
+    align-items: center; /* 콘텐츠를 중앙에 배치 */
+    box-sizing: border-box; /* 패딩 포함 계산 */
   }
 
   .numSection h2 {
@@ -303,27 +316,34 @@ export default {
 /* 소형 모바일 (480px 이하) */
 @media screen and (max-width: 480px) {
   #general-section {
+ display: flex;
+    justify-content: center; /* 수평 가운데 정렬 */
+    align-items: center; /* 수직 가운데 정렬 */
+    min-height: 100vh; /* 화면 높이만큼 설정 */
     padding: 2rem 1rem;
-    font-size: 16px;
   }
 
   .cardPage {
-    gap: 8px;
-    padding: 2rem;
+ display: flex;
     flex-direction: column;
-    align-items: stretch;
+    gap: 8px;
+    justify-content: center; /* 카드들이 부모 안에서 수직 중앙 정렬 */
+    align-items: center; /* 카드들이 부모 안에서 수평 중앙 정렬 */
+    width: 100%; /* 부모 너비에 맞춤 */
+    padding: 0; /* 불필요한 패딩 제거 */
   }
 
-  .infoCardFirst,
-  .infoCardSecond>div {
+
+.infoCardFirst,
+  .infoCardSecond > div {
+    width: 20rem; /* 고정 너비 */
+    height: 20rem; /* 고정 높이 */
     padding: 1rem;
-    border-radius: 20px;
-    width: 100%;
-    box-sizing: border-box;
-    min-height: 180px;
     display: flex;
     flex-direction: column;
-    position: relative; 
+    justify-content: center; /* 콘텐츠를 중앙에 배치 */
+    align-items: center; /* 콘텐츠를 중앙에 배치 */
+    box-sizing: border-box; /* 패딩 포함 계산 */
   }
 
   .numSection h2 {

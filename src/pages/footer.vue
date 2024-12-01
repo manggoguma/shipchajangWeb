@@ -325,7 +325,11 @@ router-link:visited {
   height: auto;
   /* 비율 유지 */
 }
-
+.company-sub{
+  font-size: 0.8rem;
+  margin-right: 0;
+  gap:0;
+}
 @media screen and (max-width: 768px) {
   .content-section {
     padding: 2rem;
