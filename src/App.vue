@@ -1,8 +1,10 @@
 <template>
   <div>
-    <NavBar />
+    <NavBar class="navBar"/>
     <router-view />
     <div>
+      <goTop/>
+      <goBottom/>
       <footerPage v-if="$route.meta.footer === 'main'" />
       <subFooterPage v-else-if="$route.meta.footer === 'sub'" />
     </div>
@@ -13,6 +15,8 @@
 import NavBar from './components/NavBar.vue';
 import footerPage from './pages/footer.vue';
 import subFooterPage from './pages/subFooter.vue';
+import goTop from './components/topButton.vue'
+import goBottom from './components/bottomButton.vue'
 
 export default {
   name: "App",
@@ -20,6 +24,8 @@ export default {
     NavBar,
     footerPage,
     subFooterPage,
+    goTop,
+    goBottom
   },
 };
 </script>
@@ -27,4 +33,5 @@ export default {
 
 <style>
 @import "./global.css";
+
 </style>

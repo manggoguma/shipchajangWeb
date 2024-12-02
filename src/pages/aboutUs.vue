@@ -158,6 +158,7 @@ export default {
     padding: 10rem;
     height: auto;
     background-size: contain;
+    background: url('@/assets/icons/태블릿용 1024px.svg') center / auto no-repeat fixed;
   }
 
   .vm-title {

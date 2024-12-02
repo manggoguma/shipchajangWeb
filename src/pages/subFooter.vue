@@ -38,11 +38,12 @@
                 <div class="company-section">
                     <h3>Legal</h3>
                     <div class="company-sub">
-                        <router-link to="/terms">이용 약관</router-link>
-                        <router-link to="/privacy">개인정보처리방침</router-link>
-                        <router-link to="/rule">위치정보 이용약관</router-link>
-                    </div>
-                </div>
+            <router-link to="/terms">이용 약관</router-link>
+            <router-link to="/privacy">개인정보처리방침</router-link>
+            <router-link to="/locationPage">위치정보 이용약관</router-link>
+            <router-link to="/rule">운영정책</router-link>
+          </div>
+        </div>
                 <h6 class="copyright">Copyright ⓒ 2024 Shipchajang Co, Ltd. All Rights Reserved</h6>
             </div>
         </div>
@@ -58,8 +59,6 @@ export default {
 <style scoped>
 /* 기본 레이아웃 */
 .footer-wrapper {
-
-   border-top: 2px solid gainsboro;
     padding-top: 2rem;
     background-image: url('@/assets/icons/cars.svg');
     background-size: auto;
@@ -261,14 +260,13 @@ router-link:visited {
     }
 
     .footer-wrapper {
-        background-image: url('@/assets/icons/태블릿용 1024px.svg');
-        background-size: contain;
-        background-position: center;
-        /* 이미지의 중심을 기준으로 배치 */
+        padding-top: 2rem;
+        background-image: url('@/assets/icons/cars.svg');
+        background-size: auto;
+        background-position: bottom;
+        /* 배경 이미지를 가운데 아래로 배치 */
         background-repeat: no-repeat;
-        background-attachment: fixed;
         color: black;
-        height: 100vh;
     }
 
     .footerPage {
@@ -333,10 +331,13 @@ router-link:visited {
     }
 
     .footer-wrapper {
-        background-size: 100%;
-        background-position: top center;
-        background-attachment: scroll;
-        /* 스크롤 시 배경 움직임 */
+        padding-top: 2rem;
+        background-image: url('@/assets/icons/cars.svg');
+        background-size: auto;
+        background-position: bottom;
+        /* 배경 이미지를 가운데 아래로 배치 */
+        background-repeat: no-repeat;
+        color: black;
     }
 
     .footerPage {
@@ -376,6 +377,15 @@ router-link:visited {
 }
 
 @media screen and (max-width: 480px) {
+    .footer-wrapper {
+        padding-top: 2rem;
+        background-image: url('@/assets/icons/cars.svg');
+        background-size: auto;
+        background-position: bottom;
+        /* 배경 이미지를 가운데 아래로 배치 */
+        background-repeat: no-repeat;
+        color: black;
+    }
 
     .content-section {
         padding: 1rem;
@@ -397,9 +407,9 @@ router-link:visited {
     }
 
     .footer-wrapper {
-        background-size: 120%;
+        background-size: 150%;
         /* 작은 화면에서는 더 확대 */
-        background-position: top left;
+        background-position: bottom; 
         /* 이미지 상단 왼쪽 정렬 */
         background-repeat: no-repeat;
         /* 반복 방지 */

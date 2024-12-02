@@ -17,9 +17,9 @@
           </div>
           <div class="image-warpper">
             <!-- <img src="../assets/icons/section1.svg" alt="section1" class="image active" /> -->
-            <img src="../assets/icons/section2.svg" alt="section2" class="image active" />
-            <img src="../assets/icons/section3.svg" alt="section3" class="image" style="width: 110%;"/>
-            <img src="../assets/icons/section4.svg" alt="section4" class="image"  style="width: 110%;"/>
+            <img src="../assets/icons/sec1.svg" alt="sec1" class="image active" />
+            <img src="../assets/icons/sec2.svg" alt="sec2" class="image" style="width: 110%;"/>
+            <img src="../assets/icons/sec3.svg" alt="sec3" class="image"  style="width: 110%;"/>
           </div>
 
         </div>
@@ -249,8 +249,8 @@ export default {
 /* car 이미지 */
 .image-container img:nth-child(2) {
   z-index: 3;
-  top: 20px;
-  left: 70%;
+  top: 12px;
+  left: 71%;
   transform: translateX(0%) scale(1);
   opacity: 0;
   animation: diagonalSlideIn 2s ease-in-out forwards;
@@ -384,7 +384,11 @@ export default {
   .content {
     width: 90vw;
   }
-
+  #text-sec2 {
+    font-size: 1.2rem; /* 글자 크기 조정 */
+    line-height: 1.5; /* 줄 간격 조정 */
+    text-align: center; /* 텍스트 정렬 변경 */
+  }
   .typing-container {
     font-size: 20px;
     margin-bottom: 3rem;
@@ -400,21 +404,21 @@ export default {
 
  }
   .image-container img:nth-child(1) {
-    top: 12vh; 
+    top: 9vh; 
     left: 25vw; 
     width: 25vw;
   }
 
   .image-container img:nth-child(2) {
-    top: 10vh;
-    left: 50vw;
-    width: 30vw; /* 화면 너비의 30% 크기 */
+    top: 9vh;
+    left: 75vw;
+    width: 35vw; /* 화면 너비의 30% 크기 */
   }
 
   .image-container img:nth-child(3) {
-    top: 25vh;
+    top: 13vh;
     left: 50vw;
-    width: 20vw; /* 화면 너비의 20% 크기 */
+    width: 35vw; /* 화면 너비의 20% 크기 */
   }
 
   .link-section {
@@ -430,13 +434,10 @@ export default {
     width: 100%;
     padding: 0 1rem;
   }
-
-  .typing-container {
-    border: #000 4px solid;
+  .typing-container { 
     font-size: 1.4rem;
     margin-bottom: 2rem;
   }
-
   .image-warpper {
     width: 15rem;
     height: 15rem;
@@ -446,22 +447,23 @@ export default {
     margin-top: 2rem;
     gap: 5px;
   }
-
+  .image-container {height: 35vh;}
+  
  .image-container img:nth-child(1) {
-    top: 19vh;
-    left: 47vw;
+    top: 8vh;
+    left: 40vw;
     width: 30vw; /* 화면 너비의 30% 크기 */
   }
 
   .image-container img:nth-child(2) {
-    top: 21vh;
-    left: 77vw;
+    top: 12vh;
+    left: 66vw;
     width: 35vw; /* 화면 너비의 35% 크기 */
   }
 
   .image-container img:nth-child(3) {
-    left: 55vw;
-    width: 35vw; /* 화면 너비의 25% 크기 */
+    left: 48vw;
+    width: 45vw; /* 화면 너비의 25% 크기 */
   }
 }
 

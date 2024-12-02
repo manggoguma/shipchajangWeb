@@ -9,11 +9,11 @@
       <!-- 데스크톱 메뉴 -->
       <ul class="navList desktop-nav">
         <li>
-          <router-link to="/contactPage" class="menu-item" style="color: #D4D7F5;">문의하기</router-link>
+          <router-link to="/contactPage" class="menu-item">문의하기</router-link>
         </li>
         <li>
           <a href="https://www.instagram.com/novalink.official/" target="_blank" class="menu-item">
-            <i class="fa-brands fa-instagram fa-2xl"  style="color: #D4D7F5;"></i>
+            <i class="fa-brands fa-instagram fa-2xl"></i>
           </a>
         </li>
       </ul>
@@ -28,11 +28,6 @@
     <ul class="navList mobile-nav" :class="{ active: isMenuOpen }">
       <li>
         <router-link to="/contactPage" class="menu-item" @click="closeMenu">문의하기</router-link>
-      </li>
-      <li>
-        <a href="https://www.instagram.com/novalink.official/" target="_blank" class="menu-item" @click="closeMenu">
-          <i class="fa-brands fa-instagram fa-2xl"></i> 인스타그램
-        </a>
       </li>
     </ul>
   </div>
@@ -65,6 +60,7 @@ export default {
   background-color: white;
   padding: 0.5rem 5rem;
   position: relative; /* 모바일 메뉴 위치 조정을 위해 필요 */
+  height:10vh;
 }
 
 .navContent {
@@ -123,7 +119,7 @@ export default {
   display: none; /* 기본적으로 숨김 */
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 0.5rem;
   flex-direction: column;
   position: absolute;
   top: 100%; /* 네비게이션 바로 아래 */

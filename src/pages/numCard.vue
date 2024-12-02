@@ -99,6 +99,8 @@ export default {
   padding: 10rem;
   font-size: 24px;
   height: 100vh;
+
+
 }
 
 .cardPage {
@@ -213,13 +215,11 @@ export default {
 }
 
 /* 태블릿 (1024px 이하) */
-/* 태블릿 (1024px 이하) */
 @media screen and (max-width: 1024px) {
   #general-section {
     padding: 5rem;
     font-size: 20px;
   }
-
   .cardPage {
     flex-direction: row; /* 가로 정렬 유지 */
     gap: 20px; /* 카드 간 간격 */
@@ -269,10 +269,12 @@ export default {
     align-items: center; /* 수직 가운데 정렬 */
     min-height: 100vh; /* 화면 높이만큼 설정 */
     padding: 3rem 2rem;
+    margin-top:10rem ;
+    margin-block: 10rem;
   }
 
   .cardPage {
- display: flex;
+    display: flex;
     flex-direction: column;
     gap: 10px;
     justify-content: center; /* 카드들이 부모 안에서 수직 중앙 정렬 */
@@ -333,11 +335,10 @@ export default {
     padding: 0; /* 불필요한 패딩 제거 */
   }
 
-
 .infoCardFirst,
   .infoCardSecond > div {
-    width: 20rem; /* 고정 너비 */
-    height: 20rem; /* 고정 높이 */
+    width: 15rem; /* 고정 너비 */
+    height: 15rem; /* 고정 높이 */
     padding: 1rem;
     display: flex;
     flex-direction: column;

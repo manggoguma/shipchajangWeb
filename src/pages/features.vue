@@ -97,22 +97,18 @@ export default {
 };
 </script>
 
-
-
-
 <style>
 .container {
   padding: 0 20rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-
   margin-top: 5rem;
 }
 
 .display-area {
   position: sticky;
-  top: 10%;
+  top: 2%;
   display: flex;
   flex-direction: row;
   align-items: stretch;
@@ -122,6 +118,7 @@ export default {
   /* border: 2px solid red; */
   padding: 3rem;
   transition: opacity 1s ease-in-out;
+  margin-bottom: 5rem;
 }
 
 .display-image {
@@ -201,6 +198,7 @@ export default {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    top : 20%;
   }
 
   .display-image {
@@ -246,10 +244,10 @@ export default {
   }
 
   .display-area {
-    flex-direction: column;
-    gap: 1.5rem;
+    flex-direction: column-reverse;
+    gap: 1rem;
     width: 100%;
-    padding: 1.5rem;
+    padding: 1rem;
   }
 
   .display-image {
@@ -271,7 +269,6 @@ export default {
     font-size: 0.9rem;
     padding: 0.4rem;
   }
-
   .scroll-trigger {
     gap: 60px;
   }
@@ -285,9 +282,11 @@ export default {
   }
 
   .display-area {
+    /* position: relative; 또는 absolute */
     flex-direction: column-reverse;
     gap: 1rem;
     padding: 1rem;
+    top : 30%;
   }
 
   .display-image img {

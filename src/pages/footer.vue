@@ -50,7 +50,8 @@
           <div class="company-sub">
             <router-link to="/terms">이용 약관</router-link>
             <router-link to="/privacy">개인정보처리방침</router-link>
-            <router-link to="/rule">위치정보 이용약관</router-link>
+            <router-link to="/locationPage">위치정보 이용약관</router-link>
+            <router-link to="/rule">운영정책</router-link>
           </div>
         </div>
         <h6 class="copyright">Copyright ⓒ 2024 Shipchajang Co, Ltd. All Rights Reserved</h6>
@@ -270,7 +271,7 @@ router-link:visited {
   }
 
   .footer-wrapper {
-    background-image: url('@/assets/icons/태블릿용 1024px.svg');
+    background-image: url('@/assets/icons/태블릿용 푸터 1024px.svg');
     background-size: contain;
     background-position: center;
     /* 이미지의 중심을 기준으로 배치 */
@@ -320,11 +321,10 @@ router-link:visited {
 }
 
 .cars-image-wrapper img {
-  width: 150%;
-  /* 이미지 크기 조정 */
-  height: auto;
-  /* 비율 유지 */
-}
+    display: block; /* 이미지 표시 */
+    width: 100%; /* 이미지 크기 조정 */
+    height: auto; /* 비율 유지 */
+  }
 .company-sub{
   font-size: 0.8rem;
   margin-right: 0;
@@ -370,7 +370,6 @@ router-link:visited {
   }
 
   .symbol-section>img {
-
     width: 30%;
 
   }
@@ -382,13 +381,24 @@ router-link:visited {
   .company-section h3 {
     font-size: 16px;
   }
-
   .company-section h6 {
     font-size: 14px;
   }
+  
 }
 
 @media screen and (max-width: 480px) {
+  .footer-wrapper {
+    background-image: url('@/assets/icons/모바일 푸터 480px.svg');
+    background-size: contain;
+    background-position: center;
+    /* 이미지의 중심을 기준으로 배치 */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: black;
+    height: 100vh;
+    width: 100vw;
+  }
 
   .content-section {
     padding: 1rem;
@@ -425,7 +435,6 @@ router-link:visited {
   }
 
   .symbol-section {
-
     display: flex;
     /* Flexbox 활성화 */
     justify-content: center;
@@ -448,7 +457,7 @@ router-link:visited {
   }
 
   .company-sub a {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     /* 텍스트 크기 더 줄이기 */
     margin-right: 1.5rem;
   }
@@ -465,6 +474,18 @@ router-link:visited {
   .copyright {
     font-size: 0.5rem;
     text-align: center;
+  }
+  .cars-image-wrapper {
+  display: flex;
+  /* Flexbox 레이아웃 활성화 */
+  justify-content: center;
+  /* 가로 정렬 */
+}
+
+.cars-image-wrapper img {
+    display: block; /* 이미지 표시 */
+    width: 150%; /* 이미지 크기 조정 */
+    height: auto; /* 비율 유지 */
   }
 }
 </style>

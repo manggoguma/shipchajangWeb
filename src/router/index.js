@@ -4,6 +4,7 @@ import TermsPage from '@/pages/TermsPage.vue';
 import RulePage from '@/pages/RulePage.vue';
 import PrivacyPage from '@/pages/PrivacyPage.vue';
 import contactPage from '@/pages/contactPage.vue';
+import locationPage from '@/pages/LocationPage.vue'
 
 const routes = [
   {
@@ -35,6 +36,12 @@ const routes = [
     path: '/contactPage',
     name: 'contactPage',
     component: contactPage,
+    meta : {footer:'sub'},
+  },
+  {
+    path: '/locationPage',
+    name: 'locationPage',
+    component: locationPage,
     meta : {footer:'sub'},
   },
 ];
