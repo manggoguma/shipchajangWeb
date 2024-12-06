@@ -30,7 +30,7 @@
             <h6>대표 : 김형우 | 사업자 등록 번호: 414-87-03129</h6>
             <h6>통신판매업번호 : 2024-광주동구-0492</h6>
             <h6>전화번호 : 010-7515-5087</h6>
-            <h6>이메일 : contact@shipchajang.com</h6>
+            <h6>이메일 : connect@shipchajang.com</h6>
           </div>
         </div>
 
@@ -57,9 +57,9 @@
         <h6 class="copyright">Copyright ⓒ 2024 Shipchajang Co, Ltd. All Rights Reserved</h6>
       </div>
     </div>
-    <div class="cars-image-wrapper">
+    <!-- <div class="cars-image-wrapper">
       <img src="../assets/icons/cars.svg" alt="Cars">
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -233,6 +233,7 @@ router-link:visited {
 
 .company-sub a {
   margin-right: 5rem;
+  font-size: 1rem;
 }
 
 .company-sub a:last-child {
@@ -247,10 +248,10 @@ router-link:visited {
   font-weight: 100;
 }
 .cars-image-wrapper {
-  display: none; /* 기본적으로 숨김 */
+  display: none; 
 }
 .cars-image-wrapper img {
-  display: none; /* 기본적으로 숨김 */
+  display: none; 
 }
 
 /* 미디어쿼리 */
@@ -273,7 +274,7 @@ router-link:visited {
   .footer-wrapper {
     background-image: url('@/assets/icons/태블릿용 푸터 1024px.svg');
     background-size: contain;
-    background-position: center;
+    background-position: center top;
     /* 이미지의 중심을 기준으로 배치 */
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -311,20 +312,21 @@ router-link:visited {
     gap: 1rem;
     align-items: flex-start;
   }
-}
-
-.cars-image-wrapper {
-  display: flex;
-  /* Flexbox 레이아웃 활성화 */
-  justify-content: center;
-  /* 가로 정렬 */
-}
-
-.cars-image-wrapper img {
-    display: block; /* 이미지 표시 */
-    width: 100%; /* 이미지 크기 조정 */
-    height: auto; /* 비율 유지 */
+  .cars-image-wrapper {
+    display: flex; /* Flexbox 레이아웃 활성화 */
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
   }
+  .cars-image-wrapper img {
+    display: block; /* 이미지를 표시 */
+    width: 100%; /* 너비를 조정 */
+    height: 5vh; /* 비율 유지 */
+    background-position:bottom;
+  }
+}
+
+
+  
 .company-sub{
   font-size: 0.8rem;
   margin-right: 0;
@@ -384,7 +386,17 @@ router-link:visited {
   .company-section h6 {
     font-size: 14px;
   }
-  
+  .cars-image-wrapper {
+    display: flex; /* Flexbox 레이아웃 활성화 */
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+  }
+
+  .cars-image-wrapper img {
+    display: block; /* 이미지를 표시 */
+    width: 100%; /* 너비를 조정 */
+    height: auto; /* 비율 유지 */
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -431,24 +443,15 @@ router-link:visited {
   }
 
   .symbol-section {
-    align-items: center;
-  }
-
-  .symbol-section {
     display: flex;
-    /* Flexbox 활성화 */
     justify-content: center;
-    /* 가로 가운데 정렬 */
     align-items: center;
-    /* 세로 가운데 정렬 */
     width: 100%;
-    /* 부모 컨테이너 너비 맞춤 */
     height: auto;
-    /* 필요한 높이 조정 */
   }
 
   .symbol-section>img {
-    width: 40%;
+    width: 35%;
     margin-bottom: 2rem;
   }
 
@@ -457,9 +460,8 @@ router-link:visited {
   }
 
   .company-sub a {
-    font-size: 0.7rem;
-    /* 텍스트 크기 더 줄이기 */
-    margin-right: 1.5rem;
+    font-size: 0.6rem;
+    margin-right: 1rem;
   }
 
   .company-section h3 {
@@ -477,15 +479,92 @@ router-link:visited {
   }
   .cars-image-wrapper {
   display: flex;
-  /* Flexbox 레이아웃 활성화 */
   justify-content: center;
-  /* 가로 정렬 */
 }
 
 .cars-image-wrapper img {
     display: block; /* 이미지 표시 */
-    width: 150%; /* 이미지 크기 조정 */
+    width: 100%; /* 이미지 크기 조정 */
     height: auto; /* 비율 유지 */
   }
+  @media screen and (max-width: 320px) {
+    .company-sub a {
+    margin-right: 0.8rem;
+  }
+  }
+}
+@media screen and (min-height: 768px) and (max-height: 1024px) and (max-width: 1366px) and (orientation: landscape) {
+  .content-section {
+    padding: 2rem 5rem;
+  }
+
+  .text-section h1 {
+    font-size: 2rem;
+  }
+
+  .router-link {
+    font-size: 20px;
+    width: 12rem;
+    height: 2.2rem;
+  }
+
+  .footer-wrapper {
+    background-image: url('@/assets/icons/footer tablet.svg');
+   
+    background-position: center top;
+    /* 이미지의 중심을 기준으로 배치 */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: black;
+    
+  }
+
+  .footerPage {
+    padding: 5rem;
+    gap:3rem;
+  }
+
+  .symbol-section {
+    display: flex;
+    /* Flexbox 활성화 */
+    justify-content: flex-start;
+    /* 가로 방향 시작 정렬 */
+    align-items: flex-start;
+    /* 세로 방향 시작 정렬 */
+    /* border: 4px solid red; */
+  }
+
+  .symbol-section>img {
+    align-self: center;
+    justify-self: center;
+    width: 15rem;
+    align-self: start;
+ 
+  }
+
+  .symbol-section {
+    width: 60%;
+    
+  }
+
+  .company-section {
+    /* border: 4px solid red; */
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  .cars-image-wrapper {
+    display: flex; /* Flexbox 레이아웃 활성화 */
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+  }
+  .cars-image-wrapper img {
+    display: block; /* 이미지를 표시 */
+    width: 100%; /* 너비를 조정 */
+    height: 5vh; /* 비율 유지 */
+    background-position:bottom;
+  }
+
+  
 }
 </style>

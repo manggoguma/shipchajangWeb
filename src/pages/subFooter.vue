@@ -20,7 +20,7 @@
                         <h6>대표 : 김형우 | 사업자 등록 번호: 414-87-03129</h6>
                         <h6>통신판매업번호 : 2024-광주동구-0492</h6>
                         <h6>전화번호 : 010-7515-5087</h6>
-                        <h6>이메일 : contact@shipchajang.com</h6>
+                        <h6>이메일 : connect@shipchajang.com</h6>
                     </div>
                 </div>
 
@@ -38,12 +38,12 @@
                 <div class="company-section">
                     <h3>Legal</h3>
                     <div class="company-sub">
-            <router-link to="/terms">이용 약관</router-link>
-            <router-link to="/privacy">개인정보처리방침</router-link>
-            <router-link to="/locationPage">위치정보 이용약관</router-link>
-            <router-link to="/rule">운영정책</router-link>
-          </div>
-        </div>
+                        <router-link to="/terms">이용 약관</router-link>
+                        <router-link to="/privacy">개인정보처리방침</router-link>
+                        <router-link to="/locationPage">위치정보 이용약관</router-link>
+                        <router-link to="/rule">운영정책</router-link>
+                    </div>
+                </div>
                 <h6 class="copyright">Copyright ⓒ 2024 Shipchajang Co, Ltd. All Rights Reserved</h6>
             </div>
         </div>
@@ -378,6 +378,7 @@ router-link:visited {
 
 @media screen and (max-width: 480px) {
     .footer-wrapper {
+        padding: 0.7rem;
         padding-top: 2rem;
         background-image: url('@/assets/icons/cars.svg');
         background-size: auto;
@@ -408,35 +409,25 @@ router-link:visited {
 
     .footer-wrapper {
         background-size: 150%;
-        /* 작은 화면에서는 더 확대 */
-        background-position: bottom; 
-        /* 이미지 상단 왼쪽 정렬 */
+
+        background-position: bottom;
+
         background-repeat: no-repeat;
-        /* 반복 방지 */
+
         background-attachment: scroll;
-        /* 스크롤 시 배경 움직임 */
+
     }
 
     .symbol-section {
-        align-items: center;
-    }
-
-    .symbol-section {
-
         display: flex;
-        /* Flexbox 활성화 */
         justify-content: center;
-        /* 가로 가운데 정렬 */
         align-items: center;
-        /* 세로 가운데 정렬 */
         width: 100%;
-        /* 부모 컨테이너 너비 맞춤 */
         height: auto;
-        /* 필요한 높이 조정 */
     }
 
     .symbol-section>img {
-        width: 40%;
+        width: 35%;
         margin-bottom: 2rem;
     }
 
@@ -445,9 +436,8 @@ router-link:visited {
     }
 
     .company-sub a {
-        font-size: 0.8rem;
-        /* 텍스트 크기 더 줄이기 */
-        margin-right: 1.5rem;
+        font-size: 0.6rem;
+        margin-right: 1rem;
     }
 
     .company-section h3 {
@@ -462,6 +452,62 @@ router-link:visited {
     .copyright {
         font-size: 0.5rem;
         text-align: center;
+    }
+}
+
+@media screen and (max-height: 1024px) and (max-width: 1366px) and (orientation: landscape) {
+    .footerPage {
+        padding: 2rem 5rem;
+        gap: 3rem;
+    }
+
+    .symbol-section {
+
+        flex: 1;
+    }
+
+    .symbol-section>img {
+        align-self: flex-start;
+        width: 60%;
+        height: auto;
+
+    }
+
+    .about-section {
+        flex: 3;
+    }
+
+    .company-sub a {
+        margin-right: 2rem;
+    }
+}
+
+@media screen and (max-height:820px) and (min-width: 1180px) and (orientation: landscape) {
+    .footerPage {
+
+        padding: 2rem 3rem;
+        gap: 2rem;
+
+    }
+
+    .symbol-section {
+
+        flex: 1;
+    }
+
+    .symbol-section>img {
+        width: 80%;
+        /* 소형 화면에서 더 작게 */
+        height: auto;
+
+    }
+
+    .about-section {
+        flex: 3;
+    }
+
+    .company-sub a {
+        margin-right: 2rem;
     }
 }
 </style>

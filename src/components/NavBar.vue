@@ -56,11 +56,17 @@ export default {
 /* 네비게이션 바 */
 .navbar {
   display: flex;
+  /* 플렉스 컨테이너로 설정 */
+  align-items: center;
+  /* 수직 중앙 정렬 */
+  justify-content: center;
+  /* 수평 중앙 정렬 */
   flex-direction: column;
+  /* 필요한 경우 추가 */
   background-color: white;
   padding: 0.5rem 5rem;
-  position: relative; /* 모바일 메뉴 위치 조정을 위해 필요 */
-  height:10vh;
+  position: relative;
+  height: 10vh;
 }
 
 .navContent {
@@ -70,6 +76,7 @@ export default {
   justify-content: space-between;
   padding: 0.5rem;
 }
+
 .navList {
   display: flex;
   gap: 1.5rem;
@@ -79,9 +86,12 @@ export default {
 }
 
 .navList a {
-  color: inherit; /* 텍스트 색상 상속 */
-  text-decoration: none; /* 밑줄 제거 */
+  color: inherit;
+  /* 텍스트 색상 상속 */
+  text-decoration: none;
+  /* 밑줄 제거 */
 }
+
 /* 로고 */
 .logo {
   width: 150px;
@@ -116,13 +126,15 @@ export default {
 
 /* 모바일 네비게이션 */
 .navList.mobile-nav {
-  display: none; /* 기본적으로 숨김 */
+  display: none;
+  /* 기본적으로 숨김 */
   list-style: none;
   margin: 0;
   padding: 0.5rem;
   flex-direction: column;
   position: absolute;
-  top: 100%; /* 네비게이션 바로 아래 */
+  top: 100%;
+  /* 네비게이션 바로 아래 */
   right: 0;
   background-color: white;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -131,7 +143,8 @@ export default {
 }
 
 .navList.mobile-nav.active {
-  display: flex; /* 햄버거 메뉴 열릴 때 표시 */
+  display: flex;
+  /* 햄버거 메뉴 열릴 때 표시 */
 }
 
 .navList.mobile-nav .menu-item {
@@ -148,7 +161,8 @@ export default {
 
 /* 햄버거 버튼 */
 .hamburger {
-  display: none; /* 기본적으로 숨김 */
+  display: none;
+  /* 기본적으로 숨김 */
   background: none;
   border: none;
   font-size: 1.5rem;
@@ -158,36 +172,60 @@ export default {
 }
 
 .hamburger:hover {
-  transform: rotate(90deg); /* 클릭 시 버튼 회전 효과 */
+  transform: rotate(90deg);
+  /* 클릭 시 버튼 회전 효과 */
 }
 
 /* 미디어 쿼리: 태블릿 */
 @media screen and (max-width: 1024px) {
   .navbar {
-    padding: 0.5rem 3rem;
+
+
+
+    padding: 1.5rem 5rem;
+
+    height: 8vh;
   }
 
   .logo {
-    width: 120px;
+    width: 11rem;
   }
 
   .navList.desktop-nav {
-    display: none; /* 데스크톱 네비게이션 숨김 */
+    display: none;
+    /* 데스크톱 네비게이션 숨김 */
+
   }
 
   .hamburger {
-    display: block; /* 햄버거 버튼 표시 */
+    display: block;
+    /* 햄버거 버튼 표시 */
+    font-size: 2.5rem;
   }
+
 }
 
 /* 미디어 쿼리: 모바일 */
 @media screen and (max-width: 768px) {
+  .navbar {
+
+    padding: 1.5rem 5rem;
+
+    height: 6vh;
+  }
+
+  .logo {
+    width: 9rem;
+  }
+
   .hamburger {
-    display: block; /* 햄버거 버튼 표시 */
+    display: block;
+    /* 햄버거 버튼 표시 */
   }
 
   .navList.desktop-nav {
-    display: none; /* 데스크톱 네비게이션 숨김 */
+    display: none;
+    /* 데스크톱 네비게이션 숨김 */
   }
 
   .mobile-nav .menu-item {
@@ -208,11 +246,40 @@ export default {
 
   .mobile-nav .menu-item {
     font-size: 13px;
-    padding: 0.8rem 1rem;
+    padding: 0.8rem 0.5rem;
+
   }
 
   .hamburger {
     font-size: 1rem;
+  }
+
+  .navbar {
+    height: 10vh;
+    padding: 0.5rem 1.5rem;
+  }
+
+}
+
+@media screen and (max-width: 1024px) and (max-height: 768px) {
+  .navContent {
+
+    padding: 1rem;
+  }
+
+  .navbar {
+    padding: 2.5rem 3rem;
+    height: 5vh;
+
+  }
+
+  .logo {
+    width: 8rem;
+  }
+
+  .hamburger {
+
+    font-size: 2rem;
   }
 }
 </style>

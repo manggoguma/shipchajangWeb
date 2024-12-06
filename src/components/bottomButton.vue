@@ -36,32 +36,48 @@
   
   
   <style scoped>
-  .GoBottom {
-    position: fixed;
-    bottom: 1.5rem;
-    right: 2rem;
-    background: black;
-    color: #fff;
-    padding: 1rem;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    transition: opacity 0.3s, transform 0.3s;
-  }
-  
-  .GoBottom:hover {
-    background: #333;
-    transform: scale(1.1);
-  }
-  
+.GoBottom {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 2rem;
+  background: black;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.3s, transform 0.3s;
+  z-index: 1000;
+}
+
+.GoBottom:hover {
+  background: #333;
+
+}
   /* 애니메이션 */
   .GoBottom.fade-out {
     opacity: 0;
     transform: translateY(50px);
   }
+    /* 모바일 화면(768px 이하)에서 크기 조정 */
+@media (max-width: 768px) {
+    .GoBottom {
+        bottom: 3rem;
+        right: 1.5rem; 
+        padding: 0.8rem; /* 버튼 크기 축소 */
+    }
+}
+  /* 작은 모바일 화면(480px 이하)에서 더 작게 조정 */
+@media (max-width: 480px) {
+    .GoBottom {
+        bottom: 1rem;
+        right: 0.8rem;
+        
+    }
+}
   </style>
   
   

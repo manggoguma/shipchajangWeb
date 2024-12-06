@@ -34,7 +34,7 @@
   
   <style>
   .goTop {
-    position: fixed;
+    position: fixed !important;
     bottom: 5rem;
     right: 2rem;
     background: black;
@@ -45,6 +45,28 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 9999;
   }
+  .goTop:hover {
+  background: #333;
+
+}
+  /* 모바일 화면(768px 이하)에서 크기 조정 */
+@media (max-width: 768px) {
+    .goTop {
+        bottom: 3rem;
+        right: 1.5rem; 
+        padding: 0.8rem; /* 버튼 크기 축소 */
+    }
+}
+
+/* 작은 모바일 화면(480px 이하)에서 더 작게 조정 */
+@media (max-width: 480px) {
+    .goTop {
+        bottom: 4rem;
+        right: 0.8rem;
+        
+    }
+}
   </style>
   

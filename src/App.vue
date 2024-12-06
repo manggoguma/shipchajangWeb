@@ -1,13 +1,13 @@
 <template>
-  <div>
-    <NavBar class="navBar"/>
-    <router-view />
-    <div>
-      <goTop/>
-      <goBottom/>
-      <footerPage v-if="$route.meta.footer === 'main'" />
-      <subFooterPage v-else-if="$route.meta.footer === 'sub'" />
+  <div id="app">
+    <NavBar class="navBar" />
+    <div class="layout-container">
+      <router-view />
+      <goTop />
+      <goBottom />
     </div>
+    <footerPage v-if="$route.meta.footer === 'main'" />
+    <subFooterPage v-else-if="$route.meta.footer === 'sub'" />
   </div>
 </template>
 
@@ -33,5 +33,10 @@ export default {
 
 <style>
 @import "./global.css";
+ 
+.layout-container {
+  width: 100vw;
+  position: relative;
+}
 
 </style>

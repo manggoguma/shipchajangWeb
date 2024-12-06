@@ -22,7 +22,7 @@
       <div v-if="!isSmallScreen" class="vision-text margin-top">
         우리는 주차를 단순한 행위가 아닌, 스트레스 없는 자연스러운 일상의 일부로 만들어가며,
       </div>
-      <div v-else class="vision-text">
+      <div v-else class="vision-text margin-top">
         우리는 주차를 단순한 행위가 아닌, <br> 스트레스 없는 자연스러운 일상의<br> 일부로 만들어가며,
       </div>
       <div v-if="!isSmallScreen" class="vision-text">
@@ -70,7 +70,7 @@ export default {
       });
     },
     checkScreenSize() {
-      this.isSmallScreen = window.innerWidth <= 480; // 480px 이하인 경우 true
+      this.isSmallScreen = window.innerWidth <= 1024;
     },
   },
 };
@@ -156,9 +156,7 @@ export default {
 @media screen and (max-width: 1024px) {
   .container {
     padding: 10rem;
-    height: auto;
-    background-size: contain;
-    background: url('@/assets/icons/태블릿용 1024px.svg') center / auto no-repeat fixed;
+   
   }
 
   .vm-title {
@@ -184,8 +182,10 @@ export default {
 @media screen and (max-width: 768px) {
   .container {
     padding: 5rem 2rem;
+    background-size: cover !important; /* 배경 이미지를 화면에 꽉 차게 */
+    background-position: center top;
+    background: url('@/assets/icons/모바일 about 480px.svg') center / auto no-repeat fixed;
   }
-
   .vm-title {
     font-size: 1.2rem;
     margin-bottom: 2rem;
@@ -204,23 +204,117 @@ export default {
 /* 소형 모바일 (480px 이하) */
 @media screen and (max-width: 480px) {
   .container {
-    padding: 3rem 2rem;
+    height: 60vh;
+    background-size: cover !important; /* 배경 이미지를 화면에 꽉 차게 */
+    background-position: center top;
+    background: url('@/assets/icons/모바일 about 480px.svg') center / auto no-repeat fixed;
   }
 
   .vm-title {
     font-size: 0.8rem;
-    margin-bottom: 1.5rem;
     text-align: center;
     /* 텍스트 중앙 정렬 */
   }
 
   .vision-text {
     font-size: 1rem;
-    margin-bottom: 0.8rem;
+
   }
 
   .margin-top {
-    margin-top: 3rem;
+    margin-top: 2.5rem;
   }
+}
+@media screen and (min-height: 768px) and (max-height: 1024px) and (max-width: 1366px) and (orientation: landscape) {
+  .content-section {
+    padding: 2rem 5rem;
+  }
+
+  .text-section h1 {
+    font-size: 2rem;
+  }
+
+  .router-link {
+    font-size: 20px;
+    width: 12rem;
+    height: 2.2rem;
+  }
+
+  .footer-wrapper {
+    background-image: url('@/assets/icons/footer tablet.svg');
+   
+    background-position: center top;
+    /* 이미지의 중심을 기준으로 배치 */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: black;
+    
+  }
+
+  .footerPage {
+    padding: 5rem 3rem;
+    gap:3rem;
+  }
+
+  .symbol-section {
+    display: flex;
+    /* Flexbox 활성화 */
+    justify-content: flex-start;
+    /* 가로 방향 시작 정렬 */
+    align-items: flex-start;
+    /* 세로 방향 시작 정렬 */
+    /* border: 4px solid red; */
+  }
+
+  .symbol-section>img {
+    align-self: center;
+    justify-self: center;
+    width: 15rem;
+ 
+  }
+
+  .symbol-section {
+    width: 60%;
+    
+  }
+
+  .company-section {
+    /* border: 4px solid red; */
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  .cars-image-wrapper {
+    display: flex; /* Flexbox 레이아웃 활성화 */
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+  }
+  .cars-image-wrapper img {
+    display: block; /* 이미지를 표시 */
+    width: 100%; /* 너비를 조정 */
+    height: 5vh; /* 비율 유지 */
+    background-position:bottom;
+  }
+
+  
+}
+@media screen and (max-height: 1024px) and (min-width: 1366px) and (orientation: landscape) {
+  .container {
+    padding: 5rem;}
+}
+@media screen and (max-height:820px) and (min-width: 1180px) and (orientation: landscape) {
+  .container {
+    padding: 5rem;}
+    .vision-text{
+      font-size: 1.7rem;
+      margin-bottom : 1.5rem;
+    }
+    .vm-title {
+    font-size: 1.3rem;
+    margin-bottom: 4rem;
+    }
+    .margin-top{
+    margin-top: 4rem;
+}
 }
 </style>
