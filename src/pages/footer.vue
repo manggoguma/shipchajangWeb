@@ -493,6 +493,7 @@ router-link:visited {
   }
   }
 }
+
 @media screen and (min-height: 768px) and (max-height: 1024px) and (max-width: 1366px) and (orientation: landscape) {
   .content-section {
     padding: 2rem 5rem;
@@ -509,8 +510,9 @@ router-link:visited {
   }
 
   .footer-wrapper {
-    background-image: url('@/assets/icons/footer tablet.svg');
-   
+
+    background-image:  url('@/assets/icons/plx.svg');
+    height: auto;
     background-position: center top;
     /* 이미지의 중심을 기준으로 배치 */
     background-repeat: no-repeat;

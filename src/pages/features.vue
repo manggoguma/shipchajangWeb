@@ -4,11 +4,13 @@
       <div class="display-image">
         <img :src="currentContent.image" alt="전환 이미지" />
       </div>
+      <div>
       <div class="display-text">
         <h3>{{ currentContent.title }}</h3>
         <h1>{{ currentContent.text }}</h1>
-        <h1>{{ currentContent.nextText }}</h1>
+        <h4>{{ currentContent.nextText }}</h4>
       </div>
+    </div>
     </div>
 
     <!-- 스크롤을 트리거하는 빈 섹션 -->
@@ -27,33 +29,33 @@ export default {
       contents: [
         {
           title: "추천 주차장",
-          text: "지도에서 찾을 필요 없이, ",
-          nextText: "추천 주차장으로 바로 주차장 찾기",
+          text: "추천 주차장으로 시간단축",
+          nextText: "지도에서 찾을 필요 없이 추천 주차장으로 바로 찾아보세요",
           image: require("@/assets/icons/feature1.svg"),
         },
         {
           title: "맞춤 주차",
-          text: "내가 원하는 주차장,  ",
-          nextText: "내가 원하는 주차 자리를 선택해요",
+          text: "선택의 자유",
+          nextText: "내가 원하는 주차 자리를 선택해보세요",
           image: require("@/assets/icons/feature2.svg"),
 
         },
         {
           title: "안심 보장",
-          text: "쉽차장 차단기가",
-          nextText: "예약 공간을 지켜 주고 있어요",
+          text: "안심 주차",
+          nextText: "쉽차장 차단기가 예약 공간을 지켜드려요",
           image: require("@/assets/icons/feature3.svg"),
         },
         {
           title: "결제하기",
-          text: "내가 주차하고 싶은 만큼 사용하고 ",
-          nextText: "종료하기를 눌러 결제해요",
+          text: "편리한 결제",
+          nextText: "사용한 만큼만 결제하고 종료하기 버튼을 눌러보세요",
           image: require("@/assets/icons/feature4.svg"),
         },
         {
           title: "한시적 주차장",
-          text: "나라에서 허용한 ",
-          nextText: "길가 주차 정보도 쉽차장에서는 쉽게!",
+          text: "길가 주차도 쉽고 편리하게",
+          nextText: "나라에서 허용한 한시적 길가 주차 정보도 쉽차장에서 간편하게 확인해보세요",
           image: require("@/assets/icons/feature5.svg"),
         },
       ],
@@ -90,10 +92,27 @@ export default {
         }
       });
     },
+
     updateContent() {
-      this.currentContent = this.contents[this.currentIndex];
-    },
-  },
+  const textElement = document.querySelector('.display-text');
+
+  // 현재 텍스트를 화면 밖으로 내보냄
+  textElement.classList.remove('fade-in');
+  textElement.classList.add('fade-out');
+
+  setTimeout(() => {
+    // 콘텐츠 업데이트
+    this.currentContent = this.contents[this.currentIndex];
+
+    // 새로운 텍스트를 화면 안으로 불러옴
+    textElement.classList.remove('fade-out');
+    textElement.classList.add('fade-in');
+  }, 400); // 애니메이션 지속 시간에 맞게 딜레이 설정
+}
+,
+}
+,
+  
 };
 </script>
 
@@ -104,6 +123,7 @@ export default {
   flex-direction: column;
   align-items: center;
   margin-top: 5rem;
+  
 }
 
 .display-area {
@@ -121,13 +141,26 @@ export default {
 }
 
 .display-image {
+  border: #5B67EC 5px solid;
   width: 42%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  transform: translateY(20px); /* 초기 위치 */
+  opacity: 1;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
 
+.display-image.fade-out {
+  opacity: 0;
+  transform: translateY(0); /* 기존 이미지 제자리에서 사라짐 */
+}
+
+.display-image.fade-in {
+  opacity: 1;
+  transform: translateY(-20px); /* 새로운 이미지 위로 올라옴 */
 }
 
 .display-image img {
@@ -139,18 +172,29 @@ export default {
 
 .display-text {
   display: flex;
-
   flex-direction: column;
-
   justify-content: center;
   align-items: start;
   text-align: start;
-
   opacity: 1;
-  transition: opacity 1s ease-in-out;
-
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
   flex: 1;
+  margin-top:18rem;
+  transform: translateY(0); /* 초기 위치 */
+  border: #5B67EC 5px solid;
+  max-width: 50rem;
 }
+
+.display-text.fade-out {
+  opacity: 0;
+  transform: translateY(100%); /* 화면 아래로 완전히 사라짐 */
+}
+
+.display-text.fade-in {
+  opacity: 1;
+  transform: translateY(0); /* 화면 안으로 돌아옴 */
+}
+
 
 .display-text h3 {
   color: white;
@@ -162,7 +206,7 @@ export default {
 }
 
 .display-text h1 {
-  font-size: 1.7rem;
+  font-size: 2.5rem;
   margin-bottom: 0.1rem;
   font-family: NanumSquareNeoExtraBold;
 }
@@ -329,11 +373,11 @@ export default {
   }
 
   .display-area {
-    margin-top: 5rem;
+    margin-top: 3rem;
     flex-direction: column-reverse;
-    gap: 3rem;
+    gap: 2rem;
     padding: 1rem;
-top : 2.5%;
+top : 5%;
 
   }
 
@@ -517,7 +561,7 @@ top : 2.5%;
     /* 수평 중앙 정렬 */
 
     padding: 5rem;
-    top: 8%;
+    top: 13%;
     gap: 4rem;
 
   }
@@ -572,7 +616,7 @@ top : 2.5%;
     /* 수평 중앙 정렬 */
 
     padding: 5rem;
-    top: 8%;
+    top: 13%;
     gap: 5rem;
 
   }

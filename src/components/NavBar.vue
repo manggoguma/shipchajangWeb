@@ -56,25 +56,25 @@ export default {
 /* 네비게이션 바 */
 .navbar {
   display: flex;
-  /* 플렉스 컨테이너로 설정 */
   align-items: center;
-  /* 수직 중앙 정렬 */
   justify-content: center;
-  /* 수평 중앙 정렬 */
-  flex-direction: column;
-  /* 필요한 경우 추가 */
   background-color: white;
-  padding: 0.5rem 5rem;
-  position: relative;
-  height: 10vh;
+  padding: 0.5rem 0;
+  height: 8vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; 
+  z-index: 9999; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
 }
 
 .navContent {
   display: flex;
-  width: 100%;
+  width: 90%;
+  max-width: 110rem; /* 최대 너비 제한 */
   align-items: center;
   justify-content: space-between;
-  padding: 0.5rem;
 }
 
 .navList {
@@ -94,7 +94,7 @@ export default {
 
 /* 로고 */
 .logo {
-  width: 150px;
+  width: 9rem;
   height: auto;
   object-fit: contain;
   transition: transform 0.2s ease-in-out;
@@ -179,22 +179,16 @@ export default {
 /* 미디어 쿼리: 태블릿 */
 @media screen and (max-width: 1024px) {
   .navbar {
-
-
-
     padding: 1.5rem 5rem;
-
     height: 8vh;
   }
 
   .logo {
-    width: 11rem;
+    width: 7rem;
   }
 
   .navList.desktop-nav {
     display: none;
-    /* 데스크톱 네비게이션 숨김 */
-
   }
 
   .hamburger {
@@ -241,7 +235,7 @@ export default {
 /* 소형 모바일 */
 @media screen and (max-width: 480px) {
   .logo {
-    width: 100px;
+    width: 4rem;
   }
 
   .mobile-nav .menu-item {
@@ -255,12 +249,12 @@ export default {
   }
 
   .navbar {
-    height: 10vh;
-    padding: 0.5rem 1.5rem;
+    height: 5vh;
+    padding: 0.5rem;
   }
 
 }
-
+/* 
 @media screen and (max-width: 1024px) and (max-height: 768px) {
   .navContent {
 
@@ -281,5 +275,5 @@ export default {
 
     font-size: 2rem;
   }
-}
+} */
 </style>

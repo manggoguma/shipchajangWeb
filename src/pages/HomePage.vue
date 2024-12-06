@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <Fullpage />
+  <div class="homepageDiv">
+    <!-- <Fullpage /> -->
     <featuresPage />
     <NumCard />
     <aboutUs />
@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import Fullpage from './FullPage.vue';
+// import Fullpage from './FullPage.vue';
 import featuresPage from './features.vue';
 import NumCard from './numCard.vue';
 import aboutUs from './aboutUs.vue';
@@ -17,7 +17,7 @@ import aboutUs from './aboutUs.vue';
 export default {
   name: "App",
   components: {
-    Fullpage,
+    // Fullpage,
     featuresPage,
     NumCard,
     aboutUs
@@ -27,5 +27,7 @@ export default {
 </script>
 
 <style>
-
+/* .homepageDiv{
+  height: 92vh;
+} */
 </style>

@@ -51,8 +51,7 @@ const store = createStore({
                 console.error('오류:', errorMessage);
                 commit('setError', errorMessage); // 에러 상태 업데이트
             }
-        }
-        ,
+        },
     }
 
 })

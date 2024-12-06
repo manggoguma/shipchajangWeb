@@ -1,9 +1,9 @@
 <template>
 
   <div id="scroll-container">
-    <div class="section sec1">
+    <div class="section sec1" >
       <div class="content">
-        <div class="typing-container">
+        <div class="typing-container" >
           <span id="part1-sec1"></span>
           <span id="part2-sec1"></span>
           <span id="cursor-sec1"></span>
@@ -34,9 +34,9 @@
           <span id="cursor-sec3"></span>
         </div>
         <div class="image-container">
-          <img src="../assets/icons/mentionimg.svg" alt="Mention" />
+          <!-- <img src="../assets/icons/mentionimg.svg" alt="Mention" />
           <img src="../assets/icons/carimg.svg" alt="Car" />
-          <img src="../assets/icons/arrowimg.svg" alt="Arrow" />
+          <img src="../assets/icons/arrowimg.svg" alt="Arrow" /> -->
         </div>
         <div class="link-section">
           <a href="https://www.shipchajang.com/">
@@ -63,7 +63,7 @@ export default {
           part2: "",
         },
         {
-          part1: "나를 위한 맞춤 주차장부터 ",
+          part1: "나를 위한 맞춤 주차장부터",
           part2: "쉽차장만 알려주는 주차구역까지!",
         },
         {
@@ -71,7 +71,7 @@ export default {
           part2: " 환영합니다",
         },
       ],
-      delayBetweenParts: 500, // 두 텍스트 간의 간격
+      delayBetweenParts:700, // 두 텍스트 간의 간격
     };
   },
   mounted() {
@@ -163,8 +163,6 @@ export default {
         images[currentIndex].classList.add('active');
       }, 2000); // 2초마다 전환
     },
-
-
   },
 
 
@@ -212,7 +210,6 @@ export default {
 .sec3 {
   background-color: #f6f6f9;
 }
-
 
 .section.visible {
   opacity: 1;
@@ -351,7 +348,7 @@ export default {
 }
 
 .link-section {
-  margin-top: 5rem;
+  margin-top: 2rem;
   /* 링크 섹션의 위쪽 여백 */
   display: flex;
   gap: 20px;
@@ -582,7 +579,7 @@ width: 20vw;
   }
  
   .link-section>a>img {
-width: 44vw;
+   width: 44vw;
   }
   .image-container {
     width: 20rem;
@@ -594,20 +591,17 @@ width: 44vw;
     top: 8vh;
     left: 40vw;
     width: 30vw;
-    /* 화면 너비의 30% 크기 */
   }
 
   .image-container img:nth-child(2) {
     top: 12vh;
     left: 66vw;
     width: 35vw;
-    /* 화면 너비의 35% 크기 */
   }
 
   .image-container img:nth-child(3) {
     left: 48vw;
     width: 45vw;
-    /* 화면 너비의 25% 크기 */
   }
 
   .image-qnpfr {

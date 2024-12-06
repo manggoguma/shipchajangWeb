@@ -456,7 +456,7 @@ button:active {
 }
 @media screen and (max-height: 1024px) and (min-width: 1366px) and (orientation: landscape) {
   .contact-container {
-    padding: 4rem 11rem;
+    padding: 5rem 11rem;
 }
 }
 @media screen and (max-height:820px) and (min-width: 1180px) and (orientation: landscape) {

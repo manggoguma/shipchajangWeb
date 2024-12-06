@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <NavBar class="navBar" />
+
     <div class="layout-container">
       <router-view />
       <goTop />
@@ -9,6 +10,7 @@
     <footerPage v-if="$route.meta.footer === 'main'" />
     <subFooterPage v-else-if="$route.meta.footer === 'sub'" />
   </div>
+
 </template>
 
 <script>
@@ -33,10 +35,10 @@ export default {
 
 <style>
 @import "./global.css";
- 
+
 .layout-container {
   width: 100vw;
+  padding-top: 10vh; 
   position: relative;
 }
-
 </style>

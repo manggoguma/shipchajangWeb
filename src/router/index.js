@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import HomePage from '@/pages/HomePage.vue'; // Home 페이지를 위한 별도 컴포넌트
+import HomePage from '@/pages/HomePage.vue';
 import TermsPage from '@/pages/TermsPage.vue';
 import RulePage from '@/pages/RulePage.vue';
 import PrivacyPage from '@/pages/PrivacyPage.vue';
