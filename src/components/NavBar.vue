@@ -6,53 +6,25 @@
         <img src="../assets/icons/shipchajangLogo.svg" class="logo" />
       </router-link>
 
-      <!-- 데스크톱 메뉴 -->
+      <!-- 네비게이션 메뉴 -->
       <ul class="navList desktop-nav">
         <li>
           <router-link to="/contactPage" class="menu-item">문의하기</router-link>
         </li>
-        <li>
-          <a href="https://www.instagram.com/novalink.official/" target="_blank" class="menu-item">
-            <i class="fa-brands fa-instagram fa-2xl"></i>
-          </a>
-        </li>
       </ul>
-
-      <!-- 햄버거 버튼 -->
-      <button class="hamburger" @click="toggleMenu">
-        <i class="fa-solid fa-bars"></i>
-      </button>
     </div>
-
-    <!-- 모바일 메뉴 -->
-    <ul class="navList mobile-nav" :class="{ active: isMenuOpen }">
-      <li>
-        <router-link to="/contactPage" class="menu-item" @click="closeMenu">문의하기</router-link>
-      </li>
-    </ul>
   </div>
 </template>
+
 
 <script>
 export default {
   name: 'NavBar',
-  data() {
-    return {
-      isMenuOpen: false, // 햄버거 메뉴 열림 상태
-    };
-  },
-  methods: {
-    toggleMenu() {
-      this.isMenuOpen = !this.isMenuOpen; // 메뉴 상태 토글
-    },
-    closeMenu() {
-      this.isMenuOpen = false; // 메뉴 닫기
-    },
-  },
 };
 </script>
 
 <style scoped>
+/* 네비게이션 바 */
 /* 네비게이션 바 */
 .navbar {
   display: flex;
@@ -64,7 +36,7 @@ export default {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%; 
+  width: 100vw; 
   z-index: 9999; 
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
 }
@@ -87,12 +59,9 @@ export default {
 
 .navList a {
   color: inherit;
-  /* 텍스트 색상 상속 */
   text-decoration: none;
-  /* 밑줄 제거 */
 }
 
-/* 로고 */
 .logo {
   width: 9rem;
   height: auto;
@@ -104,176 +73,76 @@ export default {
   transform: scale(1.1);
 }
 
-/* 데스크톱 네비게이션 */
-.navList.desktop-nav {
-  display: flex;
-  gap: 1.5rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
 .navList.desktop-nav .menu-item {
-  color: inherit;
+  background-color: #5B67EC;
+  color: white;
+  border: none;
+  border-radius: 5rem;
+  padding: 1.2rem 2.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 2rem;
+  width: 60%;
+  text-align: center;
+  cursor: pointer;
   text-decoration: none;
-  font-size: 16px;
-  font-weight: 600;
 }
 
 .navList.desktop-nav .menu-item:hover {
-  color: #5B67EC;
+  background-color: #4A56C1; 
+  color: #FFF;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+  transform: scale(1.05); 
+  transition: all 0.3s ease; 
 }
 
-/* 모바일 네비게이션 */
-.navList.mobile-nav {
-  display: none;
-  /* 기본적으로 숨김 */
-  list-style: none;
-  margin: 0;
-  padding: 0.5rem;
-  flex-direction: column;
-  position: absolute;
-  top: 100%;
-  /* 네비게이션 바로 아래 */
-  right: 0;
-  background-color: white;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  z-index: 1001;
-}
-
-.navList.mobile-nav.active {
-  display: flex;
-  /* 햄버거 메뉴 열릴 때 표시 */
-}
-
-.navList.mobile-nav .menu-item {
-  padding: 1rem 2rem;
-  text-align: center;
-  color: #333;
-  text-decoration: none;
-}
-
-.navList.mobile-nav .menu-item:hover {
-  color: #5B67EC;
-  transition: color 0.2s ease;
-}
-
-/* 햄버거 버튼 */
-.hamburger {
-  display: none;
-  /* 기본적으로 숨김 */
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  z-index: 1002;
-  transition: transform 0.2s ease;
-}
-
-.hamburger:hover {
-  transform: rotate(90deg);
-  /* 클릭 시 버튼 회전 효과 */
-}
-
-/* 미디어 쿼리: 태블릿 */
+/* 미디어 쿼리 */
 @media screen and (max-width: 1024px) {
   .navbar {
-    padding: 1.5rem 5rem;
+    width: 100vw;
+    padding: 1.5rem 1rem;
     height: 8vh;
   }
 
   .logo {
     width: 7rem;
   }
-
-  .navList.desktop-nav {
-    display: none;
-  }
-
-  .hamburger {
-    display: block;
-    /* 햄버거 버튼 표시 */
-    font-size: 2.5rem;
-  }
-
 }
 
-/* 미디어 쿼리: 모바일 */
 @media screen and (max-width: 768px) {
   .navbar {
-
-    padding: 1.5rem 5rem;
-
+    width: 100vw;
+    padding: 1.5rem 0.5rem;
     height: 6vh;
   }
 
   .logo {
-    width: 9rem;
+    width: 6rem;
   }
 
-  .hamburger {
-    display: block;
-    /* 햄버거 버튼 표시 */
-  }
-
-  .navList.desktop-nav {
-    display: none;
-    /* 데스크톱 네비게이션 숨김 */
-  }
-
-  .mobile-nav .menu-item {
-    font-size: 14px;
-    padding: 0.8rem 1.5rem;
-  }
-
-  .hamburger {
-    font-size: 1.2rem;
+  .navList.desktop-nav .menu-item {
+    font-size: 0.9rem;
+    padding: 1rem 2rem;
   }
 }
 
-/* 소형 모바일 */
 @media screen and (max-width: 480px) {
+  .navbar {
+    width: 100vw;
+    height: 5vh; /* 고정 높이 설정 */
+    padding: 0.5rem; /* 패딩 조정 */
+    position: fixed; /* 고정 상태 유지 */
+    top: 0; /* 화면 상단 고정 */
+  }
+
   .logo {
     width: 4rem;
   }
 
-  .mobile-nav .menu-item {
-    font-size: 13px;
-    padding: 0.8rem 0.5rem;
-
+  .navList.desktop-nav .menu-item {
+    font-size: 0.8rem;
+    padding: 0.8rem 1.5rem;
   }
-
-  .hamburger {
-    font-size: 1rem;
-  }
-
-  .navbar {
-    height: 5vh;
-    padding: 0.5rem;
-  }
-
 }
-/* 
-@media screen and (max-width: 1024px) and (max-height: 768px) {
-  .navContent {
 
-    padding: 1rem;
-  }
-
-  .navbar {
-    padding: 2.5rem 3rem;
-    height: 5vh;
-
-  }
-
-  .logo {
-    width: 8rem;
-  }
-
-  .hamburger {
-
-    font-size: 2rem;
-  }
-} */
 </style>

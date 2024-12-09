@@ -46,6 +46,7 @@ export default {
   },
   mounted() {
     this.checkScreenSize();
+    this.startAnimation();
     window.addEventListener("resize", this.checkScreenSize);
     // 스크롤 이벤트 등록
     window.addEventListener("scroll", this.handleScroll);
@@ -72,6 +73,13 @@ export default {
     checkScreenSize() {
       this.isSmallScreen = window.innerWidth <= 1024;
     },
+    startAnimation() {
+    const elements = document.querySelectorAll(".vision-text");
+    elements.forEach((el, index) => {
+      el.style.animationDelay = `${index * 0.5}s`; // 텍스트마다 딜레이 추가
+      el.classList.add("active"); // 애니메이션 활성화
+    });
+  },
   },
 };
 </script>
@@ -124,6 +132,9 @@ export default {
 .vision-text:nth-child(4) {
   animation-delay: 2s;
   /* 네 번째 텍스트 딜레이 */
+}
+.vision-text.active {
+  animation: fadeInUp 1.5s ease-out forwards; /* 애니메이션 활성화 */
 }
 
 /* 애니메이션 정의 */

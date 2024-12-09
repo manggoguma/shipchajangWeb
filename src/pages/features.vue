@@ -35,21 +35,21 @@ export default {
         },
         {
           title: "맞춤 주차",
-          text: "선택의 자유",
-          nextText: "내가 원하는 주차 자리를 선택해보세요",
+          text: "내가 원하는 자리, 자유롭게 선택",
+          nextText: "내 조건에 맞는 공간을 직접 선택해 보세요",
           image: require("@/assets/icons/feature2.svg"),
 
         },
         {
           title: "안심 보장",
-          text: "안심 주차",
+          text: "믿을 수 있는 예약 주차 서비스",
           nextText: "쉽차장 차단기가 예약 공간을 지켜드려요",
           image: require("@/assets/icons/feature3.svg"),
         },
         {
           title: "결제하기",
-          text: "편리한 결제",
-          nextText: "사용한 만큼만 결제하고 종료하기 버튼을 눌러보세요",
+          text: "사용한 만큼만 편하게 결제",
+          nextText: "주차 종료시 버튼만 누르면 간단히 정산됩니다",
           image: require("@/assets/icons/feature4.svg"),
         },
         {
@@ -122,28 +122,27 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 5rem;
+  margin-top: 10rem;
   
 }
 
 .display-area {
   position: sticky;
-  top: 15%;
+  top: 20%;
   display: flex;
   flex-direction: row;
   align-items: stretch;
+  justify-content: center;
   gap: 7rem;
-  width: 80%;
-  height: 80%;
+  width: 100%;
   padding: 3rem;
   transition: opacity 1s ease-in-out;
   margin-bottom: 5rem;
 }
 
 .display-image {
-  border: #5B67EC 5px solid;
-  width: 42%;
-  height: 100%;
+
+  width: 30%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -151,23 +150,24 @@ export default {
   transform: translateY(20px); /* 초기 위치 */
   opacity: 1;
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  
 }
 
 .display-image.fade-out {
   opacity: 0;
-  transform: translateY(0); /* 기존 이미지 제자리에서 사라짐 */
+  transform: translateY(0);
 }
 
 .display-image.fade-in {
   opacity: 1;
-  transform: translateY(-20px); /* 새로운 이미지 위로 올라옴 */
+  transform: translateY(-20px); 
 }
 
 .display-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* 이미지 비율을 유지하며 영역을 채움 */
+
 }
 
 .display-text {
@@ -179,10 +179,10 @@ export default {
   opacity: 1;
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
   flex: 1;
-  margin-top:18rem;
-  transform: translateY(0); /* 초기 위치 */
-  border: #5B67EC 5px solid;
-  max-width: 50rem;
+  margin-top:16rem;
+  transform: translateY(0);
+  width: 30vw;
+  
 }
 
 .display-text.fade-out {
@@ -207,20 +207,22 @@ export default {
 
 .display-text h1 {
   font-size: 2.5rem;
-  margin-bottom: 0.1rem;
-  font-family: NanumSquareNeoExtraBold;
+  margin-bottom: 1rem;
+  font-family: NanumSquareNeoHeavy;
+  color : #2D2B3E;
 }
-
+.display-text h4 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color : #6C757D;
+}
 .scroll-trigger {
   display: flex;
   flex-direction: column;
-  gap: 100px;
-  /* 섹션 간 간격 */
-}
+  gap: 7rem;}
 
 .trigger-section {
   height: 100vh;
-  /* 화면 전체 크기의 섹션 */
 }
 
 /* 미디어 쿼리: 태블릿 (1024px 이하) */
@@ -280,16 +282,17 @@ export default {
 /* 아이패드 에어 (820px 이하) */
 @media screen and (max-width: 820px) {
   .container {
-    padding: 0 12rem;
+    padding: 0 4rem;
     margin-top: 3rem;
   }
 
   .display-area {
     display: flex;
     flex-direction: column-reverse;
-    gap: 3rem;
+    gap: 0.5rem;
     width: 100%;
     padding: 1rem;
+    top: 15%;
   }
 
   .display-image {
@@ -298,7 +301,7 @@ export default {
   }
 
   .display-image img {
-    width: 100%;
+    width: 65%;
     height: auto;
     object-fit: contain;
   }
@@ -310,103 +313,81 @@ export default {
     align-items: center;
     width: 100%;
     text-align: center;
+    margin:0;
   }
 
   .display-text h1 {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     line-height: 1.5rem;
     text-align: center;
   }
 
   .display-text h3 {
-    font-size: 1rem;
+    font-size: 1.5rem;
     margin-bottom: 2rem;
     text-align: center;
+  }  
+  .display-text h4{
+    font-size: 1.5rem;
+    width: 85%;
+
+
   }
 
 }
 
 
-/* 미디어 쿼리: 모바일 (768px 이하) */
-@media screen and (max-width: 768px) {
-  .container {
-    padding: 0 12rem;
-    margin-top: 5rem;
-  }
 
-  .display-area {
-    flex-direction: column-reverse;
-    gap: 2.5rem;
-    width: 100%;
-    padding: 1rem;
-  }
-
-  .display-image {
-    width: 100%;
-    height: auto;
-  }
-
-  .display-image img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-  }
-
-  .display-text h1 {
-    font-size: 1.3rem;
-  }
-
-  .display-text h3 {
-    font-size: 0.9rem;
-    padding: 0.4rem;
-  }
-
-  .scroll-trigger {
-    gap: 60px;
-  }
-}
 
 /* 미디어 쿼리: 소형 모바일 (480px 이하) */
 @media screen and (max-width: 480px) {
   .container {
-    padding: 0 3rem;
+    padding: 0 2rem;
   }
 
   .display-area {
-    margin-top: 3rem;
+    
     flex-direction: column-reverse;
-    gap: 2rem;
+    gap: 0rem;
     padding: 1rem;
-top : 5%;
+top :30%;
+/* border: #5B67EC 5px solid; */
 
   }
 
   .display-image img {
-    width: 100%;
+    width: 88%;
     height: auto;
 
   }
-
+  .display-image{
+    /* border: #2D2B3E 2px solid; */
+  }
   .display-text {
-    margin-top: 2rem;
+    margin-top: 1rem;
     width: 100%;
-    /* 고정 너비 */
     text-align: start;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    height: 8rem;
 
   }
 
   .display-text h1 {
-    font-size: 1rem;
+    font-size: 1.3rem;
     line-height: 1;
     margin-bottom: 0;
-    /* margin 제거 */
   }
 
+  .display-text h4 {
+    font-size: 0.9rem;
+    line-height: 1.3;
+    margin-bottom: 0;
+    text-align: center;
+    width: 100%;
+  }
   .display-text h3 {
     font-size: 0.9rem;
     padding: 0.6rem;
@@ -421,6 +402,16 @@ top : 5%;
   .trigger-section {
     height: 80vh;
   }
+  .display-text.fade-out {
+  opacity: 0;
+  transform: translateY(30%);
+}
+
+.display-text.fade-in {
+  opacity: 1;
+  transform: translateY(0); /* 화면 안으로 돌아옴 */
+}
+
 }
 
 @media screen and(min-width: 361px) and (max-width: 376px) {
@@ -453,39 +444,38 @@ top : 5%;
 
 @media screen and (max-width: 320px) {
   .container {
-    padding: 0 3rem;
+    padding: 0 1rem;
   }
 
   .display-area {
-    gap: 1.5rem;
+    gap: 0rem;
     padding: 1rem;
   }
-
   .display-text {
     margin-top: 1rem;
   }
 
   .display-text h1 {
-    font-size: 0.8rem;
+    font-size: 1.2rem;
     line-height: 1;
   }
 
   .display-text h3 {
     font-size: 0.7rem;
     padding: 0.5rem;
-
-
+  }
+  .display-text h4 {
+    font-size: 0.8rem;
   }
 }
 
 
 /* 아이패드 미니 (1024px) */
-@media screen and (min-width: 1024px) and (max-width: 1024px) and (orientation: landscape) {
+@media screen and (max-width: 1024px) and (max-height: 768px) and (orientation: landscape) {
   .container {
     padding: 7rem;
 
   }
-
   .display-image img {
     width: 100%;
     padding: 0;
@@ -494,8 +484,7 @@ top : 5%;
   }
 
   .display-image {
-    width: 42%;
-
+    width: 45vw;
   }
 
   .display-area {
@@ -507,24 +496,28 @@ top : 5%;
     height: 100vh;
     /* 부모 요소 높이에 맞춤 */
     top: 0;
-    gap: 3rem;
+    gap: 0rem;
+ 
 
   }
-
   .display-text {
-    margin: 0;
+    margin-top: 3rem;
+    margin-left: 3rem;
+width: 47vw;
+
   }
 
   .display-text h1 {
-    font-size: 1.5rem;
+    font-size: 2rem;
     line-height: 1;
   }
 
   .display-text h3 {
-    font-size: 1rem;
+    font-size: 1.3rem;
     padding: 0.5rem;
-
-
+  }
+  .display-text h4 {
+    font-size: 1.3rem;
   }
 }
 
@@ -532,15 +525,11 @@ top : 5%;
 @media screen and (min-width: 1180px) and (max-width: 1180px) and (orientation: landscape) {
   .container {
     padding: 7rem;
-
     display: flex;
     justify-content: center;
-    /* 수평 중앙 정렬 */
-
   }
 
   .display-image img {
-
     width: 100%;
     padding: 0;
     margin: 0;
@@ -548,54 +537,42 @@ top : 5%;
   }
 
   .display-image {
-    
     width: 40%;
-
-
   }
 
   .display-area {
-    
     display: flex;
     justify-content: center;
-    /* 수평 중앙 정렬 */
-
-    padding: 5rem;
-    top: 13%;
+    padding: 4rem;
+    top: 10%;
     gap: 4rem;
 
   }
 
   .display-text {
- 
-    margin: 0;
+    margin-top: 15rem;
+    width: 35vw;
   }
 
   .display-text h1 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     line-height: 1;
   }
 
   .display-text h3 {
     font-size: 1rem;
     padding: 0.5rem;
-
   }
 }
-
 /* 아이패드 에어 (1180px) */
-@media screen and (min-height: 821px) and (max-height: 1024px) and (max-width: 1366px) and (orientation: landscape) {
+@media screen and (max-width: 1366px) and (max-height: 1024px) and (orientation: landscape) {
   .container {
     padding: 7rem;
-
     display: flex;
     justify-content: center;
-    /* 수평 중앙 정렬 */
-
   }
 
   .display-image img {
-
     width: 100%;
     padding: 0;
     margin: 0;
@@ -603,37 +580,36 @@ top : 5%;
   }
 
   .display-image {
-
-    width: 42%;
-
-
+    width: 40%;
   }
 
   .display-area {
-
     display: flex;
     justify-content: center;
-    /* 수평 중앙 정렬 */
-
-    padding: 5rem;
-    top: 13%;
-    gap: 5rem;
+    padding: 4rem;
+    top: 5%;
+    gap: 4rem;
 
   }
 
   .display-text {
-    margin: 0;
+    margin-top: 16rem;
+    width: 40vw;
   }
 
   .display-text h1 {
-    font-size: 1.7rem;
+    font-size: 2.5rem;
     line-height: 1;
   }
 
   .display-text h3 {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     padding: 0.8rem;
-
+  }
+  
+  .display-text h4 {
+    font-size: 1.5rem;
   }
 }
+
 </style>

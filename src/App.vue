@@ -38,7 +38,6 @@ export default {
 
 .layout-container {
   width: 100vw;
-  padding-top: 10vh; 
   position: relative;
 }
 </style>

@@ -46,7 +46,9 @@
         </div>
 
         <div v-if="error" class="form-error">{{ error }}</div>
-        <button type="submit" class="submit">제출하기</button>
+        <div class="button-container">
+    <button type="submit" class="submit">문의하기</button>
+  </div>
       </form>
     </div>
   </div>
@@ -329,26 +331,36 @@ button:active {
   color: #555;
 }
 
+.button-container {
+  display: flex;
+  justify-content: center; /* 가로 중앙 정렬 */
+  width: 100%; /* 부모 컨테이너 전체를 기준으로 중앙 정렬 */
+}
+
 .submit {
-  background-color: #5B67EC;
+  background-color: #AAAAAA;
   color: white;
   border: none;
   border-radius: 5rem;
-  padding: 0.75rem 1.5rem;
+  padding: 1rem 1.5rem;
   font-size: 1rem;
   font-weight: bold;
   margin-top: 2rem;
+  width: 60%; /* 버튼 크기를 내용에 맞게 */
+  text-align: center;
+  cursor: pointer;
 }
 
+
 .submit:hover {
-  background-color: #0056b3;
+  background-color: #6C757D;
   transform: scale(1.05);
 }
 
 /* 반응형 스타일 - 태블릿 */
 @media (max-width: 1024px) {
   .contact-container {
-    padding: 3rem 2rem;
+    padding: 12rem 3rem;
   }
   .contact-intro h1 {
     font-size: 1.5rem;
@@ -366,7 +378,7 @@ button:active {
 /* 반응형 스타일 - 모바일 */
 @media (max-width: 768px) {
   .contact-container {
-    padding: 2rem 1rem;
+    padding: 8rem 3rem;
   }
 
   .contact-intro h1 {
@@ -456,12 +468,17 @@ button:active {
 }
 @media screen and (max-height: 1024px) and (min-width: 1366px) and (orientation: landscape) {
   .contact-container {
-    padding: 5rem 11rem;
+    padding: 9rem 11rem;
 }
 }
 @media screen and (max-height:820px) and (min-width: 1180px) and (orientation: landscape) {
   .contact-container {
     padding: 5rem 7rem;
 }
+}
+@media screen and (min-width: 1024px) and (max-width: 1024px) and (orientation: landscape) {
+  .contact-container {
+        padding: 9rem 2rem;
+    }
 }
 </style>

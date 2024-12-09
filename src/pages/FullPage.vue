@@ -347,15 +347,7 @@ export default {
   }
 }
 
-.link-section {
-  margin-top: 2rem;
-  /* 링크 섹션의 위쪽 여백 */
-  display: flex;
-  gap: 20px;
-  /* 링크 간 간격 */
-  justify-content: center;
-  /* 링크 정렬 */
-}
+
 
 .image-warpper {
   position: relative;

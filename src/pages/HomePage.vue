@@ -1,6 +1,7 @@
 <template>
   <div class="homepageDiv">
-    <!-- <Fullpage /> -->
+
+     <onboardingPage/>
     <featuresPage />
     <NumCard />
     <aboutUs />
@@ -8,7 +9,8 @@
 </template>
 
 <script>
-// import Fullpage from './FullPage.vue';
+
+import onboardingPage from './onboarding.vue';
 import featuresPage from './features.vue';
 import NumCard from './numCard.vue';
 import aboutUs from './aboutUs.vue';
@@ -17,10 +19,11 @@ import aboutUs from './aboutUs.vue';
 export default {
   name: "App",
   components: {
-    // Fullpage,
+
     featuresPage,
     NumCard,
-    aboutUs
+    aboutUs,
+    onboardingPage
 
   },
 };
