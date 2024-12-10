@@ -264,8 +264,8 @@ export default {
 
   .infoCardFirst,
   .infoCardSecond > div {
-    width: 22rem;
-    height: 22rem;
+    width: 25rem;
+    height: 25rem;
     padding: 1.5rem;
     padding-left: 1.5rem; 
     display: flex;

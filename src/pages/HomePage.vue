@@ -2,8 +2,8 @@
   <div class="homepageDiv">
 
      <onboardingPage class="onboard"/>
-    <featuresPage />
-    <NumCard />
+    <featuresPage  class="features"/>
+    <NumCard   class="numcard"/>
     <aboutUs />
   </div>
 </template>
@@ -30,5 +30,9 @@ export default {
 </script>
 
 <style> 
+.features{margin-top : 30rem;}
+@media screen and (max-width: 1024px) {.features{margin-top : 30rem;}};
+@media screen and (max-width: 768px) {.features{margin-top : 30rem;}};
+@media screen and (max-width: 480px) {.features{margin-top : 10rem;}.numcard{margin-top : 10rem;margin-bottom : 10rem;}}
 
 </style>

@@ -29,6 +29,7 @@ export default {
     goTop,
     goBottom
   },
+  
 };
 </script>
 
@@ -40,4 +41,5 @@ export default {
   width: 100vw;
   position: relative;
 }
+
 </style>

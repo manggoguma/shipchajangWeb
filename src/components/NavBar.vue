@@ -3,7 +3,7 @@
     <div class="navContent">
       <!-- 로고 -->
       <router-link to="/">
-        <img src="../assets/icons/shipchajangLogo.svg" class="logo" />
+        <img src="../assets/icons/shipchajanglogo.svg" class="logo" />
       </router-link>
 
       <!-- 네비게이션 메뉴 -->
@@ -63,7 +63,7 @@ export default {
 }
 
 .logo {
-  width: 9rem;
+  width: 6rem;
   height: auto;
   object-fit: contain;
   transition: transform 0.2s ease-in-out;
@@ -136,7 +136,7 @@ export default {
   }
 
   .logo {
-    width: 4rem;
+    width: 3rem;
   }
 
   .navList.desktop-nav .menu-item {

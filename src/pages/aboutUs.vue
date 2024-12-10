@@ -167,11 +167,12 @@ export default {
 @media screen and (max-width: 1024px) {
   .container {
     padding: 10rem;
-   
+   height: 96vh;
+   margin-top : 4vh;
   }
 
   .vm-title {
-    font-size: 1.3rem;
+    font-size: 1.7rem;
     margin-bottom: 3rem;
   }
 
@@ -180,7 +181,7 @@ export default {
   }
 
   .vision-text {
-    font-size: 1.8rem;
+    font-size: 2rem;
     margin-bottom: 1.5rem;
   }
 
@@ -236,96 +237,5 @@ export default {
     margin-top: 2.5rem;
   }
 }
-@media screen and (min-height: 768px) and (max-height: 1024px) and (max-width: 1366px) and (orientation: landscape) {
-  .content-section {
-    padding: 2rem 5rem;
-  }
 
-  .text-section h1 {
-    font-size: 2rem;
-  }
-
-  .router-link {
-    font-size: 20px;
-    width: 12rem;
-    height: 2.2rem;
-  }
-
-  .footer-wrapper {
-    background-image: url('@/assets/icons/footer tablet.svg');
-   
-    background-position: center top;
-    /* 이미지의 중심을 기준으로 배치 */
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    color: black;
-    
-  }
-
-  .footerPage {
-    padding: 5rem 3rem;
-    gap:3rem;
-  }
-
-  .symbol-section {
-    display: flex;
-    /* Flexbox 활성화 */
-    justify-content: flex-start;
-    /* 가로 방향 시작 정렬 */
-    align-items: flex-start;
-    /* 세로 방향 시작 정렬 */
-    /* border: 4px solid red; */
-  }
-
-  .symbol-section>img {
-    align-self: center;
-    justify-self: center;
-    width: 15rem;
- 
-  }
-
-  .symbol-section {
-    width: 60%;
-    
-  }
-
-  .company-section {
-    /* border: 4px solid red; */
-    flex-direction: column;
-    gap: 1rem;
-    align-items: flex-start;
-  }
-  .cars-image-wrapper {
-    display: flex; /* Flexbox 레이아웃 활성화 */
-    justify-content: center; /* 가로 중앙 정렬 */
-    align-items: center; /* 세로 중앙 정렬 */
-  }
-  .cars-image-wrapper img {
-    display: block; /* 이미지를 표시 */
-    width: 100%; /* 너비를 조정 */
-    height: 5vh; /* 비율 유지 */
-    background-position:bottom;
-  }
-
-  
-}
-@media screen and (max-height: 1024px) and (min-width: 1366px) and (orientation: landscape) {
-  .container {
-    padding: 5rem;}
-}
-@media screen and (max-height:820px) and (min-width: 1180px) and (orientation: landscape) {
-  .container {
-    padding: 5rem;}
-    .vision-text{
-      font-size: 1.7rem;
-      margin-bottom : 1.5rem;
-    }
-    .vm-title {
-    font-size: 1.3rem;
-    margin-bottom: 4rem;
-    }
-    .margin-top{
-    margin-top: 4rem;
-}
-}
 </style>

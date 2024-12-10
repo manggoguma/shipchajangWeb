@@ -33,40 +33,62 @@
   </script>
   
   <style>
-  .goTop {
-    position: fixed !important;
-    bottom: 5rem;
-    right: 2rem;
-    background: black;
-    color: #fff;
-    padding: 1rem;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
-  }
-  .goTop:hover {
+ .goTop {
+  position: fixed !important;
+  bottom: 5rem;
+  right: 2rem;
+  background: black;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.goTop:hover {
   background: #333;
-
 }
-  /* 모바일 화면(768px 이하)에서 크기 조정 */
+
+@media (max-width: 1024px) {
+  .goTop {
+    bottom: 8rem;
+    right: 2.5rem; 
+    padding: 1.8rem; 
+  }
+
+  .goTop i {
+    font-size: 1.8rem; 
+  }
+}
+
 @media (max-width: 768px) {
-    .goTop {
-        bottom: 3rem;
-        right: 1.5rem; 
-        padding: 0.8rem; /* 버튼 크기 축소 */
-    }
+  .goTop {
+    bottom: 5.5rem;
+    right: 1.5rem;
+    padding: 1.5rem; /* 버튼 크기 축소 */
+  }
+
+  .goTop i {
+    font-size: 1.5rem; /* 아이콘 크기 축소 */
+  }
 }
 
-/* 작은 모바일 화면(480px 이하)에서 더 작게 조정 */
 @media (max-width: 480px) {
-    .goTop {
-        bottom: 4rem;
-        right: 0.8rem;
-        
-    }
+  .goTop {
+    bottom: 4rem;
+    right: 0.6rem;
+    padding: 0.8rem; /* 버튼 크기 축소 */
+  }
+
+  .goTop i {
+    font-size: 1rem; /* 아이콘 크기 축소 */
+  }
+
 }
+
+
   </style>
   

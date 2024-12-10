@@ -80,7 +80,6 @@ export default {
   background-repeat: no-repeat;
   background-attachment: fixed;
   color: black;
-
 }
 
 /* 상단 콘텐츠 섹션 */
@@ -98,7 +97,7 @@ export default {
 .text-section h1 {
   margin: 1rem 0;
   font-size: 2.5rem;
-  font-weight: 900;
+  font-family: NanumSquareNeoExtraBold;
 }
 
 .text-section h1:first-child {
@@ -258,7 +257,7 @@ router-link:visited {
 @media screen and (max-width: 1024px) {
 
   .content-section {
-    padding: 2rem 5rem;
+    padding: 7rem 5rem;
   }
 
   .text-section h1 {
@@ -273,13 +272,12 @@ router-link:visited {
 
   .footer-wrapper {
     background-image: url('@/assets/icons/태블릿용 푸터 1024px.svg');
-    background-size: contain;
-    background-position: center top;
-    /* 이미지의 중심을 기준으로 배치 */
+    background-size: 100%;
+    background-position: left top;
     background-repeat: no-repeat;
     background-attachment: fixed;
     color: black;
-    height: 100vh;
+    height: 96vh;
   }
 
   .footerPage {
@@ -324,9 +322,6 @@ router-link:visited {
     background-position:bottom;
   }
 }
-
-
-  
 .company-sub{
   font-size: 0.8rem;
   margin-right: 0;
@@ -351,7 +346,7 @@ router-link:visited {
     background-size: 100%;
     background-position: top center;
     background-attachment: scroll;
-    /* 스크롤 시 배경 움직임 */
+    margin: 0;
   }
 
   .footerPage {
@@ -402,16 +397,16 @@ router-link:visited {
 @media screen and (max-width: 480px) {
   .footer-wrapper {
     background-image: url('@/assets/icons/모바일 푸터 480px.svg');
-    background-size: contain;
-    background-position: center;
-    /* 이미지의 중심을 기준으로 배치 */
     background-repeat: no-repeat;
     background-attachment: fixed;
+    background-position: top left;
+   background-repeat: no-repeat;
+    background-attachment: scroll;
     color: black;
     height: 100vh;
     width: 100vw;
+    margin:0;
   }
-
   .content-section {
     padding: 1rem;
   }
@@ -431,16 +426,7 @@ router-link:visited {
     gap: 1rem;
   }
 
-  .footer-wrapper {
-    background-size: 120%;
-    /* 작은 화면에서는 더 확대 */
-    background-position: top left;
-    /* 이미지 상단 왼쪽 정렬 */
-    background-repeat: no-repeat;
-    /* 반복 방지 */
-    background-attachment: scroll;
-    /* 스크롤 시 배경 움직임 */
-  }
+
 
   .symbol-section {
     display: flex;
@@ -494,79 +480,5 @@ router-link:visited {
   }
 }
 
-@media screen and (min-height: 768px) and (max-height: 1024px) and (max-width: 1366px) and (orientation: landscape) {
-  .content-section {
-    padding: 2rem 5rem;
-  }
 
-  .text-section h1 {
-    font-size: 2rem;
-  }
-
-  .router-link {
-    font-size: 20px;
-    width: 12rem;
-    height: 2.2rem;
-  }
-
-  .footer-wrapper {
-
-    background-image:  url('@/assets/icons/plx.svg');
-    height: auto;
-    background-position: center top;
-    /* 이미지의 중심을 기준으로 배치 */
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    color: black;
-    
-  }
-
-  .footerPage {
-    padding: 5rem;
-    gap:3rem;
-  }
-
-  .symbol-section {
-    display: flex;
-    /* Flexbox 활성화 */
-    justify-content: flex-start;
-    /* 가로 방향 시작 정렬 */
-    align-items: flex-start;
-    /* 세로 방향 시작 정렬 */
-    /* border: 4px solid red; */
-  }
-
-  .symbol-section>img {
-    align-self: center;
-    justify-self: center;
-    width: 15rem;
-    align-self: start;
- 
-  }
-
-  .symbol-section {
-    width: 60%;
-    
-  }
-
-  .company-section {
-    /* border: 4px solid red; */
-    flex-direction: column;
-    gap: 1rem;
-    align-items: flex-start;
-  }
-  .cars-image-wrapper {
-    display: flex; /* Flexbox 레이아웃 활성화 */
-    justify-content: center; /* 가로 중앙 정렬 */
-    align-items: center; /* 세로 중앙 정렬 */
-  }
-  .cars-image-wrapper img {
-    display: block; /* 이미지를 표시 */
-    width: 100%; /* 너비를 조정 */
-    height: 5vh; /* 비율 유지 */
-    background-position:bottom;
-  }
-
-  
-}
 </style>
