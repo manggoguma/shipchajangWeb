@@ -101,7 +101,7 @@ export default {
   .navbar {
     width: 100vw;
     padding: 1.5rem 1rem;
-    height: 8vh;
+    height: 4vh;
   }
 
   .logo {

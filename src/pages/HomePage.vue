@@ -1,7 +1,7 @@
 <template>
   <div class="homepageDiv">
 
-     <onboardingPage/>
+     <onboardingPage class="onboard"/>
     <featuresPage />
     <NumCard />
     <aboutUs />
@@ -29,8 +29,6 @@ export default {
 };
 </script>
 
-<style>
-/* .homepageDiv{
-  height: 92vh;
-} */
+<style> 
+
 </style>

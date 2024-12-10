@@ -80,7 +80,7 @@ export default {
   background-repeat: no-repeat;
   background-attachment: fixed;
   color: black;
-  height: 100vh;
+
 }
 
 /* 상단 콘텐츠 섹션 */

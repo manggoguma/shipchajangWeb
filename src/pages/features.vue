@@ -5,12 +5,12 @@
         <img :src="currentContent.image" alt="전환 이미지" />
       </div>
       <div>
-      <div class="display-text">
-        <h3>{{ currentContent.title }}</h3>
-        <h1>{{ currentContent.text }}</h1>
-        <h4>{{ currentContent.nextText }}</h4>
+        <div class="display-text">
+          <h3>{{ currentContent.title }}</h3>
+          <h1>{{ currentContent.text }}</h1>
+          <h4>{{ currentContent.nextText }}</h4>
+        </div>
       </div>
-    </div>
     </div>
 
     <!-- 스크롤을 트리거하는 빈 섹션 -->
@@ -58,7 +58,7 @@ export default {
           nextText: "나라에서 허용한 한시적 길가 주차 정보도 쉽차장에서 간편하게 확인해보세요",
           image: require("@/assets/icons/feature5.svg"),
         },
-      ],
+      ], 
       currentContent: {}, // 현재 보여질 콘텐츠
       currentIndex: 0, // 현재 콘텐츠 인덱스
     };
@@ -94,25 +94,25 @@ export default {
     },
 
     updateContent() {
-  const textElement = document.querySelector('.display-text');
+      const textElement = document.querySelector('.display-text');
 
-  // 현재 텍스트를 화면 밖으로 내보냄
-  textElement.classList.remove('fade-in');
-  textElement.classList.add('fade-out');
+      // 현재 텍스트를 화면 밖으로 내보냄
+      textElement.classList.remove('fade-in');
+      textElement.classList.add('fade-out');
 
-  setTimeout(() => {
-    // 콘텐츠 업데이트
-    this.currentContent = this.contents[this.currentIndex];
+      setTimeout(() => {
+        // 콘텐츠 업데이트
+        this.currentContent = this.contents[this.currentIndex];
 
-    // 새로운 텍스트를 화면 안으로 불러옴
-    textElement.classList.remove('fade-out');
-    textElement.classList.add('fade-in');
-  }, 400); // 애니메이션 지속 시간에 맞게 딜레이 설정
-}
-,
-}
-,
-  
+        // 새로운 텍스트를 화면 안으로 불러옴
+        textElement.classList.remove('fade-out');
+        textElement.classList.add('fade-in');
+      }, 400); // 애니메이션 지속 시간에 맞게 딜레이 설정
+    }
+    ,
+  }
+  ,
+
 };
 </script>
 
@@ -123,7 +123,7 @@ export default {
   flex-direction: column;
   align-items: center;
   margin-top: 10rem;
-  
+
 }
 
 .display-area {
@@ -147,10 +147,11 @@ export default {
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  transform: translateY(20px); /* 초기 위치 */
+  transform: translateY(20px);
+  /* 초기 위치 */
   opacity: 1;
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-  
+
 }
 
 .display-image.fade-out {
@@ -160,7 +161,7 @@ export default {
 
 .display-image.fade-in {
   opacity: 1;
-  transform: translateY(-20px); 
+  transform: translateY(-20px);
 }
 
 .display-image img {
@@ -179,20 +180,22 @@ export default {
   opacity: 1;
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
   flex: 1;
-  margin-top:16rem;
+  margin-top: 16rem;
   transform: translateY(0);
   width: 30vw;
-  
+
 }
 
 .display-text.fade-out {
   opacity: 0;
-  transform: translateY(100%); /* 화면 아래로 완전히 사라짐 */
+  transform: translateY(100%);
+  /* 화면 아래로 완전히 사라짐 */
 }
 
 .display-text.fade-in {
   opacity: 1;
-  transform: translateY(0); /* 화면 안으로 돌아옴 */
+  transform: translateY(0);
+  /* 화면 안으로 돌아옴 */
 }
 
 
@@ -209,17 +212,20 @@ export default {
   font-size: 2.5rem;
   margin-bottom: 1rem;
   font-family: NanumSquareNeoHeavy;
-  color : #2D2B3E;
+  color: #2D2B3E;
 }
+
 .display-text h4 {
   font-size: 1.3rem;
   margin-bottom: 1rem;
-  color : #6C757D;
+  color: #6C757D;
 }
+
 .scroll-trigger {
   display: flex;
   flex-direction: column;
-  gap: 7rem;}
+  gap: 7rem;
+}
 
 .trigger-section {
   height: 100vh;
@@ -313,7 +319,7 @@ export default {
     align-items: center;
     width: 100%;
     text-align: center;
-    margin:0;
+    margin: 0;
   }
 
   .display-text h1 {
@@ -326,8 +332,9 @@ export default {
     font-size: 1.5rem;
     margin-bottom: 2rem;
     text-align: center;
-  }  
-  .display-text h4{
+  }
+
+  .display-text h4 {
     font-size: 1.5rem;
     width: 85%;
 
@@ -346,12 +353,12 @@ export default {
   }
 
   .display-area {
-    
+
     flex-direction: column-reverse;
     gap: 0rem;
     padding: 1rem;
-top :30%;
-/* border: #5B67EC 5px solid; */
+    top: 7.5%;
+    /* border: #5B67EC 5px solid; */
 
   }
 
@@ -360,9 +367,11 @@ top :30%;
     height: auto;
 
   }
-  .display-image{
+
+  .display-image {
     /* border: #2D2B3E 2px solid; */
   }
+
   .display-text {
     margin-top: 1rem;
     width: 100%;
@@ -388,6 +397,7 @@ top :30%;
     text-align: center;
     width: 100%;
   }
+
   .display-text h3 {
     font-size: 0.9rem;
     padding: 0.6rem;
@@ -402,15 +412,17 @@ top :30%;
   .trigger-section {
     height: 80vh;
   }
-  .display-text.fade-out {
-  opacity: 0;
-  transform: translateY(30%);
-}
 
-.display-text.fade-in {
-  opacity: 1;
-  transform: translateY(0); /* 화면 안으로 돌아옴 */
-}
+  .display-text.fade-out {
+    opacity: 0;
+    transform: translateY(30%);
+  }
+
+  .display-text.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+    /* 화면 안으로 돌아옴 */
+  }
 
 }
 
@@ -451,6 +463,7 @@ top :30%;
     gap: 0rem;
     padding: 1rem;
   }
+
   .display-text {
     margin-top: 1rem;
   }
@@ -464,6 +477,7 @@ top :30%;
     font-size: 0.7rem;
     padding: 0.5rem;
   }
+
   .display-text h4 {
     font-size: 0.8rem;
   }
@@ -476,6 +490,7 @@ top :30%;
     padding: 7rem;
 
   }
+
   .display-image img {
     width: 100%;
     padding: 0;
@@ -497,13 +512,14 @@ top :30%;
     /* 부모 요소 높이에 맞춤 */
     top: 0;
     gap: 0rem;
- 
+
 
   }
+
   .display-text {
     margin-top: 3rem;
     margin-left: 3rem;
-width: 47vw;
+    width: 47vw;
 
   }
 
@@ -516,6 +532,7 @@ width: 47vw;
     font-size: 1.3rem;
     padding: 0.5rem;
   }
+
   .display-text h4 {
     font-size: 1.3rem;
   }
@@ -564,6 +581,7 @@ width: 47vw;
     padding: 0.5rem;
   }
 }
+
 /* 아이패드 에어 (1180px) */
 @media screen and (max-width: 1366px) and (max-height: 1024px) and (orientation: landscape) {
   .container {
@@ -606,10 +624,9 @@ width: 47vw;
     font-size: 1.5rem;
     padding: 0.8rem;
   }
-  
+
   .display-text h4 {
     font-size: 1.5rem;
   }
 }
-
 </style>
