@@ -8,7 +8,7 @@
         <div class="display-text">
           <h3>{{ currentContent.title }}</h3>
           <h1>{{ currentContent.text }}</h1>
-          <h4>{{ currentContent.nextText }}</h4>
+          <h4 v-html="currentContent.nextText"></h4>
         </div>
       </div>
     </div>
@@ -30,7 +30,7 @@ export default {
         {
           title: "추천 주차장",
           text: "추천 주차장으로 시간단축",
-          nextText: "지도에서 찾을 필요 없이 추천 주차장으로 바로 찾아보세요",
+          nextText: "지도에서 찾을 필요 없이<br>추천 주차장으로 바로 찾아보세요",
           image: require("@/assets/icons/feature1.svg"),
         },
         {
@@ -55,7 +55,7 @@ export default {
         {
           title: "한시적 주차장",
           text: "길가 주차도 쉽고 편리하게",
-          nextText: "나라에서 허용한 한시적 길가 주차 정보도 쉽차장에서 간편하게 확인해보세요",
+          nextText: "나라에서 허용한 한시적 길가 주차 정보도<br> 쉽차장에서 간편하게 확인해보세요",
           image: require("@/assets/icons/feature5.svg"),
         },
       ],
@@ -127,7 +127,7 @@ export default {
 
 .display-area {
   position: sticky;
-  top: 20%;
+  top: calc(10vh + 6rem); /* 화면 높이에 비례하여 위치 조정 */
   display: flex;
   flex-direction: row;
   align-items: stretch;
@@ -136,8 +136,9 @@ export default {
   width: 100%;
   padding: 3rem;
   transition: opacity 1s ease-in-out;
-  margin-bottom: 5rem;
+  margin-bottom: calc(5vh + 1rem); /* 화면 높이에 따라 조정 */
 }
+
 
 .display-image {
   width: 30%;
@@ -178,6 +179,7 @@ export default {
   margin-top: 16rem;
   transform: translateY(0);
   width: 30vw;
+  top : 50%;
 }
 
 .display-text.fade-out {
@@ -208,7 +210,7 @@ export default {
 
 .display-text h4 {
   font-size: 1.3rem;
-  margin-bottom: 1rem;
+  line-height: 2rem;
   color: #6c757d;
 }
 

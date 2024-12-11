@@ -288,6 +288,7 @@ router-link:visited {
         align-self: flex-start;
         justify-self: flex-start;
         text-align: left;
+        width: 11rem;
     }
 
     .symbol-section {
@@ -359,7 +360,7 @@ router-link:visited {
 
     .symbol-section>img {
 
-        width: 30%;
+        width: 10rem;
 
     }
 

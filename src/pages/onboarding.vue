@@ -79,8 +79,8 @@ export default {
       maxPosition = 66; // 작은 화면
     } else if (screenHeight <= 800) { 
       maxPosition = 70; // 중간 화면
-    } else { 
-      maxPosition = 64; // 큰 화면
+    }  else { 
+      maxPosition = 70; // 큰 화면
     }
 
     const carInterval = setInterval(() => {

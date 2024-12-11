@@ -14,10 +14,10 @@
         쉽차장은 모든 사람들이 <br>불법 주차 과태료 걱정 없이,
       </div>
       <div v-if="!isSmallScreen" class="vision-text">
-        어디서든 편리하게 주차 공간을 찾고 예약할 수 있는 서비스를 제공합니다.
+        어디서든 편리하게 주차 공간을 찾고 예약할 수 있는 서비스를 제공합니다
       </div>
       <div v-else class="vision-text">
-        어디서든 편리하게 주차 공간을 찾고 <br> 예약할 수 있는 서비스를 제공합니다.
+        어디서든 편리하게 주차 공간을 찾고 <br> 예약할 수 있는 서비스를 제공합니다
       </div>
       <div v-if="!isSmallScreen" class="vision-text margin-top">
         우리는 주차를 단순한 행위가 아닌, 스트레스 없는 자연스러운 일상의 일부로 만들어가며,
@@ -26,10 +26,10 @@
         우리는 주차를 단순한 행위가 아닌, <br> 스트레스 없는 자연스러운 일상의<br> 일부로 만들어가며,
       </div>
       <div v-if="!isSmallScreen" class="vision-text">
-        합법적이고 효율적인 주차 문화를 정착시키고자 합니다.
+        합법적이고 효율적인 주차 문화를 정착시키고자 합니다
       </div>
       <div v-else class="vision-text">
-        합법적이고 효율적인 <br> 주차 문화를 정착시키고자 합니다.
+        합법적이고 효율적인 <br> 주차 문화를 정착시키고자 합니다
       </div>
     </div>
   </div>
@@ -166,7 +166,7 @@ export default {
 /* 태블릿 (1024px 이하) */
 @media screen and (max-width: 1024px) {
   .container {
-    padding: 10rem;
+  padding: 10rem;
    height: 96vh;
    margin-top : 4vh;
   }
@@ -183,6 +183,7 @@ export default {
   .vision-text {
     font-size: 2rem;
     margin-bottom: 1.5rem;
+    line-height: 4rem;
   }
 
   .margin-top {
@@ -205,7 +206,8 @@ export default {
 
   .vision-text {
     font-size: 1.6rem;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
+    line-height: 3rem;
   }
 
   .margin-top {
@@ -216,7 +218,8 @@ export default {
 /* 소형 모바일 (480px 이하) */
 @media screen and (max-width: 480px) {
   .container {
-    height: 60vh;
+    padding-top: 5rem;
+    height: 90vh;
     background-size: cover !important; /* 배경 이미지를 화면에 꽉 차게 */
     background-position: center top;
     background: url('@/assets/icons/모바일 about 480px.svg') center / auto no-repeat fixed;
@@ -230,6 +233,7 @@ export default {
 
   .vision-text {
     font-size: 1rem;
+    line-height: 1.8rem;
 
   }
 

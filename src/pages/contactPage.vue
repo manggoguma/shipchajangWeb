@@ -184,7 +184,7 @@ export default {
 textarea,
 input {
   width: 100%;
-  padding: 0.5rem 1rem;
+  padding: 0.7rem 1rem;
   font-size: 1rem;
   border: 1.5px solid black;
   background-color: transparent;
@@ -225,7 +225,7 @@ textarea.additional-info {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  max-width: 600px;
+  max-width: 50rem;
   margin: 0 auto;
 }
 
@@ -295,7 +295,7 @@ button:active {
 }
 
 .additional-info {
-  height: 10rem;
+  height: 12rem;
   width: 100%;
 }
 
@@ -345,7 +345,7 @@ button:active {
   padding: 1rem 1.5rem;
   font-size: 1rem;
   font-weight: bold;
-  margin-top: 2rem;
+  margin-top: 4rem;
   width: 60%; /* 버튼 크기를 내용에 맞게 */
   text-align: center;
   cursor: pointer;
@@ -363,13 +363,12 @@ button:active {
     padding: 12rem 3rem;
   }
   .contact-intro h1 {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
    
   }
   .contact-form {
-    max-width: 80%;
+    max-width: 70rem;
   }
-
   .radio-group {
     gap: 1.5rem;
   }
@@ -382,7 +381,7 @@ button:active {
   }
 
   .contact-intro h1 {
-    font-size: 1rem;
+    font-size: 1.5rem;
     line-height: 1.5;
     white-space: pre-line;
   }
@@ -400,6 +399,9 @@ button:active {
 
 /* 반응형 스타일 - 모바일 작은 화면 */
 @media (max-width: 480px) {
+  .contact-container {
+    padding: 5rem 1rem;
+  }
   .contact-content {
     width: 100%;
     padding: 0;
@@ -464,21 +466,8 @@ button:active {
   .submit {
     font-size: 1rem;
     padding: 0.8rem 0.5rem;
+    margin-top : 2rem;
   }
 }
-@media screen and (max-height: 1024px) and (min-width: 1366px) and (orientation: landscape) {
-  .contact-container {
-    padding: 9rem 11rem;
-}
-}
-@media screen and (max-height:820px) and (min-width: 1180px) and (orientation: landscape) {
-  .contact-container {
-    padding: 5rem 7rem;
-}
-}
-@media screen and (min-width: 1024px) and (max-width: 1024px) and (orientation: landscape) {
-  .contact-container {
-        padding: 9rem 2rem;
-    }
-}
+
 </style>
